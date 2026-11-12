@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth overflow-x-hidden">
+<html lang="en" class="scroll-smooth overflow-x-clip">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,14 +88,14 @@
         }
     </style>
 </head>
-<body class="blueprint-canvas text-ink font-sans antialiased selection:bg-blue-600/15 selection:text-blue-900 overflow-x-hidden">
+<body class="blueprint-canvas text-ink font-sans antialiased selection:bg-blue-600/15 selection:text-blue-900 overflow-x-clip">
 
     <!-- 1. TOP ARCHITECTURAL NAVIGATION -->
     <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 xl:gap-3">
+        <div class="w-full max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between gap-3 xl:gap-5">
             <!-- Left Monogram & Identity -->
-            <div class="flex items-center gap-2 xl:gap-2.5 shrink-0 min-w-0">
-                <a href="#" class="flex items-center gap-2 shrink-0 group whitespace-nowrap">
+            <div class="flex items-center gap-2.5 shrink-0 min-w-0">
+                <a href="#" class="flex items-center gap-2.5 shrink-0 group whitespace-nowrap">
                     <span class="w-8 h-8 rounded-lg bg-slate-900 text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-cobalt transition-colors">
                         BG
                     </span>
@@ -103,8 +103,8 @@
                         BIMAN GHOSH
                     </span>
                 </a>
-                <span class="hidden xl:inline-block text-slate-300 shrink-0">|</span>
-                <span class="hidden xl:inline-flex items-center gap-1.5 text-[10.5px] 2xl:text-xs font-mono text-slate-500 whitespace-nowrap shrink-0">
+                <span class="hidden 2xl:inline-block text-slate-300 shrink-0">|</span>
+                <span class="hidden 2xl:inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 whitespace-nowrap shrink-0">
                     <span>Kolkata, India</span>
                     <span class="text-slate-300">&bull;</span>
                     <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium px-2 py-0.5 rounded-full bg-emerald-50/90 border border-emerald-200/70">
@@ -114,65 +114,79 @@
                 </span>
             </div>
 
-            <!-- Center Navigation -->
-            <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[11px] 2xl:text-xs font-semibold uppercase tracking-wider text-slate-600 shrink-0">
-                <a href="#explorer" class="group relative px-2 xl:px-2.5 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+            <!-- Center Navigation (Desktop >= 1024px) -->
+            <nav class="hidden lg:flex items-center gap-2 xl:gap-4 text-xs xl:text-sm font-semibold uppercase tracking-wider text-slate-600 shrink-0">
+                <a href="#explorer" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>Global Explorer</span>
-                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
-                <a href="#ai-playground" class="group relative px-2 xl:px-2.5 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                <a href="#ai-playground" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>AI Sandbox</span>
-                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
-                <a href="#architecture" class="group relative px-2 xl:px-2.5 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                <a href="#architecture" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>S/4HANA Stack</span>
-                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
-                <a href="#credentials" class="group relative px-2 xl:px-2.5 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                <a href="#credentials" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>Credentials</span>
-                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
             </nav>
 
-            <!-- Right Quick Actions -->
-            <div class="flex items-center gap-1.5 xl:gap-2 shrink-0">
-                <button onclick="openResumeModal()" class="h-9 px-2.5 xl:px-3 rounded-lg bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-800 border border-slate-300 text-[11px] 2xl:text-xs font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap shrink-0">
+            <!-- Right Quick Actions + Mobile Hamburger Toggle -->
+            <div class="flex items-center gap-2 xl:gap-2.5 shrink-0">
+                <button onclick="openResumeModal()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-800 border border-slate-300 text-xs xl:text-sm font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap shrink-0">
                     <i data-lucide="file-text" class="w-3.5 h-3.5 text-cobalt shrink-0"></i>
                     <span class="hidden sm:inline">Printable CV</span>
                     <span class="sm:hidden">CV</span>
                 </button>
-                <a href="#ai-playground" class="h-9 px-2.5 xl:px-3 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-[11px] 2xl:text-xs font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-xs whitespace-nowrap shrink-0">
+                <a href="#ai-playground" class="px-3 py-1.5 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs xl:text-sm font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-xs whitespace-nowrap shrink-0">
                     <i data-lucide="terminal" class="w-3.5 h-3.5 shrink-0"></i>
                     <span>Launch Sandbox</span>
                 </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileNav()" aria-expanded="false" aria-label="Toggle navigation menu" class="lg:hidden p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 inline-flex items-center justify-center cursor-pointer transition-colors shrink-0">
+                    <i id="mobile-menu-icon" data-lucide="menu" class="w-4 h-4"></i>
+                </button>
             </div>
         </div>
-        <!-- Compact Status Strip for Tablet / Smaller Viewports (< 1280px) -->
-        <div class="xl:hidden border-t border-slate-200/70 bg-slate-50/90 px-4 sm:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-600">
-            <div class="flex items-center gap-1.5 min-w-0">
-                <span class="font-medium text-slate-700 whitespace-nowrap">Kolkata, India</span>
+
+        <!-- Mobile / Tablet Collapsible Navigation Drawer (< 1024px) -->
+        <div id="mobile-nav-drawer" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 py-3 space-y-3 shadow-lg">
+            <div class="flex flex-wrap items-center gap-1.5 text-xs font-mono text-slate-600 pb-2 border-b border-slate-100">
+                <span class="font-semibold text-slate-800">Kolkata, India</span>
                 <span class="text-slate-300">&bull;</span>
                 <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
                     <span>Open to Senior Manager / Functional Architect Roles</span>
                 </span>
             </div>
-            <nav class="flex lg:hidden items-center gap-1 text-[11px] font-sans font-semibold uppercase tracking-wider text-slate-600 overflow-x-auto no-scrollbar">
-                <a href="#explorer" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">Global Explorer</a>
-                <a href="#ai-playground" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">AI Sandbox</a>
-                <a href="#architecture" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">S/4HANA Stack</a>
-                <a href="#credentials" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">Credentials</a>
+            <nav class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-700">
+                <a href="#explorer" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">Global Explorer</a>
+                <a href="#ai-playground" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">AI Sandbox</a>
+                <a href="#architecture" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">S/4HANA Stack</a>
+                <a href="#credentials" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">Credentials</a>
             </nav>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="border-b border-slate-200/90 bg-gradient-to-b from-white/80 to-transparent">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-14 sm:pt-16 sm:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14 sm:pt-14 sm:pb-20">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 
                 <!-- Left Architectural Thesis -->
                 <div class="lg:col-span-8 space-y-6">
+                    <!-- Location & Availability Pill (Visible in Hero below 2xl so header stays spacious on laptops) -->
+                    <div class="2xl:hidden inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-mono text-slate-600">
+                        <span class="font-semibold text-slate-800">Kolkata, India</span>
+                        <span class="text-slate-300">&bull;</span>
+                        <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
+                            <span>Open to Senior Manager / Functional Architect Roles</span>
+                        </span>
+                    </div>
+
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-cobalt font-mono text-xs font-semibold">
                             SAP IS-U DEVICE MANAGEMENT &amp; AMI SME
@@ -846,8 +860,19 @@
         </div>
     </div>
 
+    <!-- FLOATING SCROLL TO TOP BUTTON -->
+    <button
+        id="scroll-top-btn"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        aria-label="Scroll to top"
+        title="Scroll to top"
+        class="fixed bottom-6 right-6 z-40 h-11 w-11 rounded-xl bg-white/95 hover:bg-cobalt text-slate-800 hover:text-white border border-slate-300 hover:border-cobalt shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center cursor-pointer transition-all duration-300 ease-out opacity-0 pointer-events-none translate-y-2 backdrop-blur-sm"
+    >
+        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+    </button>
+
     <!-- TOAST FEEDBACK -->
-    <div id="toast-banner" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 text-white text-xs font-mono shadow-xl border border-slate-700">
+    <div id="toast-banner" class="fixed bottom-20 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 text-white text-xs font-mono shadow-xl border border-slate-700">
         <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
         <span id="toast-msg">Copied to clipboard</span>
     </div>
@@ -1612,8 +1637,51 @@
         }
 
         // =========================================================================
-        // 5. MODAL, CLIPBOARD & TOAST UTILITIES
+        // 5. MODAL, MOBILE NAV, SCROLL-TO-TOP, CLIPBOARD & TOAST UTILITIES
         // =========================================================================
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobile-nav-drawer');
+            const btn = document.getElementById('mobile-menu-btn');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (!drawer) return;
+            const isHidden = drawer.classList.contains('hidden');
+            if (isHidden) {
+                drawer.classList.remove('hidden');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+                if (icon) icon.setAttribute('data-lucide', 'x');
+            } else {
+                drawer.classList.add('hidden');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+                if (icon) icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        function closeMobileNav() {
+            const drawer = document.getElementById('mobile-nav-drawer');
+            const btn = document.getElementById('mobile-menu-btn');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (!drawer || drawer.classList.contains('hidden')) return;
+            drawer.classList.add('hidden');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+            if (icon) icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        function updateScrollTopButton() {
+            const btn = document.getElementById('scroll-top-btn');
+            if (!btn) return;
+            if (window.scrollY > 350) {
+                btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+                btn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            } else {
+                btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                btn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            }
+        }
+
+        window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+
         function openResumeModal() {
             const modal = document.getElementById('resume-modal');
             modal.classList.remove('hidden');
@@ -1675,6 +1743,7 @@
             selectBlueprintModule('dm');
             selectArchNode(0);
             filterCerts('all');
+            updateScrollTopButton();
             lucide.createIcons();
         });
     </script>
