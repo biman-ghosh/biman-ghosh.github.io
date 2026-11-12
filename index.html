@@ -92,81 +92,64 @@
 
     <!-- 1. TOP ARCHITECTURAL NAVIGATION -->
     <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="w-full max-w-7xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between gap-3 xl:gap-5">
-            <!-- Left Monogram & Identity -->
-            <div class="flex items-center gap-2.5 shrink-0 min-w-0">
-                <a href="#" class="flex items-center gap-2.5 shrink-0 group whitespace-nowrap">
-                    <span class="w-8 h-8 rounded-lg bg-slate-900 text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-cobalt transition-colors">
-                        BG
-                    </span>
-                    <span class="font-bold tracking-tight text-slate-900 text-sm sm:text-base whitespace-nowrap">
-                        BIMAN GHOSH
-                    </span>
-                </a>
-                <span class="hidden 2xl:inline-block text-slate-300 shrink-0">|</span>
-                <span class="hidden 2xl:inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 whitespace-nowrap shrink-0">
-                    <span>Kolkata, India</span>
-                    <span class="text-slate-300">&bull;</span>
-                    <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium px-2 py-0.5 rounded-full bg-emerald-50/90 border border-emerald-200/70">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
-                        <span>Open to Senior Manager / Functional Architect Roles</span>
-                    </span>
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+            <!-- Left: Monogram & Identity -->
+            <a href="#" class="flex items-center gap-2.5 shrink-0 group whitespace-nowrap">
+                <span class="w-8 h-8 rounded-lg bg-slate-900 text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-cobalt transition-colors">
+                    BG
                 </span>
-            </div>
+                <span class="font-bold tracking-tight text-slate-900 text-sm sm:text-base whitespace-nowrap">
+                    BIMAN GHOSH
+                </span>
+            </a>
 
-            <!-- Center Navigation (Desktop >= 1024px) -->
-            <nav class="hidden lg:flex items-center gap-2 xl:gap-4 text-xs xl:text-sm font-semibold uppercase tracking-wider text-slate-600 shrink-0">
-                <a href="#explorer" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+            <!-- Center: Navigation (Desktop >= 1280px / xl) -->
+            <nav class="hidden xl:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600 whitespace-nowrap shrink-0">
+                <a href="#explorer" class="group relative px-2.5 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>Global Explorer</span>
-                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
-                <a href="#ai-playground" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                <a href="#ai-playground" class="group relative px-2.5 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>AI Sandbox</span>
-                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
-                <a href="#architecture" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                <a href="#architecture" class="group relative px-2.5 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>S/4HANA Stack</span>
-                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
-                <a href="#credentials" class="group relative px-3 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                <a href="#credentials" class="group relative px-2.5 py-1.5 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
                     <span>Credentials</span>
-                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                    <span class="pointer-events-none absolute bottom-1 left-2.5 right-2.5 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
                 </a>
             </nav>
 
-            <!-- Right Quick Actions + Mobile Hamburger Toggle -->
-            <div class="flex items-center gap-2 xl:gap-2.5 shrink-0">
-                <button onclick="openResumeModal()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-800 border border-slate-300 text-xs xl:text-sm font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap shrink-0">
+            <!-- Right: Quick Actions + Hamburger Toggle (< 1280px / xl:hidden) -->
+            <div class="flex items-center gap-3 shrink-0 whitespace-nowrap">
+                <button onclick="openResumeModal()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-800 border border-slate-300 text-xs font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap shrink-0">
                     <i data-lucide="file-text" class="w-3.5 h-3.5 text-cobalt shrink-0"></i>
                     <span class="hidden sm:inline">Printable CV</span>
                     <span class="sm:hidden">CV</span>
                 </button>
-                <a href="#ai-playground" class="px-3 py-1.5 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs xl:text-sm font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-xs whitespace-nowrap shrink-0">
+                <a href="#ai-playground" class="px-3.5 py-2 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-xs whitespace-nowrap shrink-0">
                     <i data-lucide="terminal" class="w-3.5 h-3.5 shrink-0"></i>
                     <span>Launch Sandbox</span>
                 </a>
-                <button id="mobile-menu-btn" onclick="toggleMobileNav()" aria-expanded="false" aria-label="Toggle navigation menu" class="lg:hidden p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 inline-flex items-center justify-center cursor-pointer transition-colors shrink-0">
+                <button id="mobile-menu-btn" onclick="toggleMobileNav()" aria-expanded="false" aria-label="Toggle navigation menu" class="xl:hidden p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 inline-flex items-center justify-center cursor-pointer transition-colors shrink-0">
                     <i id="mobile-menu-icon" data-lucide="menu" class="w-4 h-4"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile / Tablet Collapsible Navigation Drawer (< 1024px) -->
-        <div id="mobile-nav-drawer" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 py-3 space-y-3 shadow-lg">
-            <div class="flex flex-wrap items-center gap-1.5 text-xs font-mono text-slate-600 pb-2 border-b border-slate-100">
-                <span class="font-semibold text-slate-800">Kolkata, India</span>
-                <span class="text-slate-300">&bull;</span>
-                <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
-                    <span>Open to Senior Manager / Functional Architect Roles</span>
-                </span>
+        <!-- Collapsible Navigation Drawer (< 1280px / xl:hidden) -->
+        <div id="mobile-nav-drawer" class="hidden xl:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+                <nav class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700">
+                    <a href="#explorer" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">Global Explorer</a>
+                    <a href="#ai-playground" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">AI Sandbox</a>
+                    <a href="#architecture" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">S/4HANA Stack</a>
+                    <a href="#credentials" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">Credentials</a>
+                </nav>
             </div>
-            <nav class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-700">
-                <a href="#explorer" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">Global Explorer</a>
-                <a href="#ai-playground" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">AI Sandbox</a>
-                <a href="#architecture" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">S/4HANA Stack</a>
-                <a href="#credentials" onclick="closeMobileNav()" class="px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-cobalt border border-slate-200/80 transition-colors whitespace-nowrap text-center">Credentials</a>
-            </nav>
         </div>
     </header>
 
@@ -177,8 +160,8 @@
                 
                 <!-- Left Architectural Thesis -->
                 <div class="lg:col-span-8 space-y-6">
-                    <!-- Location & Availability Pill (Visible in Hero below 2xl so header stays spacious on laptops) -->
-                    <div class="2xl:hidden inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-mono text-slate-600">
+                    <!-- Location & Availability Pill (Always in Hero on all viewports) -->
+                    <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-mono text-slate-600">
                         <span class="font-semibold text-slate-800">Kolkata, India</span>
                         <span class="text-slate-300">&bull;</span>
                         <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
