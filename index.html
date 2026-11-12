@@ -160,13 +160,13 @@
                 
                 <!-- Left Architectural Thesis -->
                 <div class="lg:col-span-8 space-y-6">
-                    <!-- Location & Availability Pill (Always in Hero on all viewports) -->
+                    <!-- Location & Discreet Executive Positioning Pill -->
                     <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs text-xs font-mono text-slate-600">
                         <span class="font-semibold text-slate-800">Kolkata, India</span>
                         <span class="text-slate-300">&bull;</span>
                         <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
-                            <span>Open to Senior Manager / Functional Architect Roles</span>
+                            <span>SAP Utilities Functional Architect &bull; S/4HANA &amp; Agentic AI</span>
                         </span>
                     </div>
 
@@ -187,7 +187,7 @@
                     </h1>
 
                     <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-                        SAP Functional Architect with <strong>13 years</strong> and <strong>8 full-lifecycle implementations</strong> bridging utility operations and technical engineering across the US, Canada, the UK, and the Caribbean. Currently leading greenfield <strong>S/4HANA Private Cloud</strong> delivery and coaching <strong>200+ associates</strong> in Enterprise Generative &amp; Agentic AI.
+                        SAP Functional Architect with <strong>13 years</strong> and <strong>8 full-lifecycle implementations</strong> plus <strong>1 large-scale production support program</strong> (15M+ UK accounts) bridging utility operations and technical engineering across the US, Canada, the UK, and the Caribbean. Currently leading greenfield <strong>S/4HANA Private Cloud</strong> delivery and coaching <strong>200+ associates</strong> in Enterprise Generative &amp; Agentic AI.
                     </p>
 
                     <!-- Action Row -->
@@ -200,15 +200,24 @@
                             <i data-lucide="printer" class="w-4 h-4 text-slate-600"></i>
                             <span>Download Printable CV</span>
                         </button>
-                        <button onclick="copyEmailAddress()" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-mono text-xs font-medium transition-all inline-flex items-center gap-2 cursor-pointer">
-                            <i data-lucide="copy" class="w-3.5 h-3.5 text-cobalt"></i>
-                            <span>biman7777@gmail.com</span>
-                        </button>
-                        <a href="https://www.linkedin.com/in/bimanghsh" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-semibold transition-all inline-flex items-center gap-2">
+                        <div id="hero-contact-slot" class="inline-flex items-center">
+                            <button onclick="revealContactInfo()" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-mono text-xs font-semibold transition-all inline-flex items-center gap-2 cursor-pointer shadow-2xs">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cobalt"></i>
+                                <span>Click to Reveal Contact</span>
+                            </button>
+                        </div>
+                        <a href="https://www.linkedin.com/in/bimanghsh" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-semibold transition-all inline-flex items-center gap-2 shadow-2xs">
                             <svg class="w-4 h-4 text-[#0A66C2] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                             <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.credly.com/users/bimanghosh/badges/credly" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-semibold transition-all inline-flex items-center gap-2 shadow-2xs">
+                            <svg class="w-4 h-4 text-[#FF6B00] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 2L4 5.5v6c0 5.25 3.4 10.15 8 11.5 4.6-1.35 8-6.25 8-11.5v-6L12 2z" fill="#FFF7ED" stroke="#EA580C"/>
+                                <path d="M9.5 12l1.8 1.8 3.7-3.7" stroke="#EA580C" stroke-width="2.2"/>
+                            </svg>
+                            <span>Credly Badges</span>
                         </a>
                     </div>
                 </div>
@@ -216,12 +225,21 @@
                 <!-- Right Live Telemetry & Executive Specification Card -->
                 <div class="lg:col-span-4">
                     <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-                            <div>
-                                <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400">ARCHITECT DOSSIER // ID-BG26</p>
-                                <p class="font-bold text-slate-900 text-base mt-0.5">Functional Architect (Consulting Manager)</p>
+                        <div class="flex items-start justify-between gap-3.5 border-b border-slate-100 pb-4">
+                            <div class="flex items-center gap-3.5 min-w-0">
+                                <img
+                                    src="./assets/profile.jpg"
+                                    alt="Biman Ghosh — SAP Functional Architect"
+                                    class="w-[68px] h-[68px] rounded-xl object-cover object-top shrink-0 shadow-xs"
+                                    style="border: 1px solid #CBD5E1;"
+                                />
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] uppercase tracking-wider text-slate-400">ARCHITECT DOSSIER // ID-BG26</p>
+                                    <p class="font-extrabold text-slate-900 text-sm sm:text-base mt-0.5 truncate">Biman Ghosh</p>
+                                    <p class="font-semibold text-cobalt text-xs leading-snug mt-0.5">Functional Architect (Consulting Manager)</p>
+                                </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[11px] font-semibold">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[10px] font-semibold shrink-0">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
                                 ACTIVE
                             </span>
@@ -244,15 +262,20 @@
                                 <span class="font-mono text-slate-500">AI ENABLEMENT</span>
                                 <span class="font-mono font-semibold text-amber-700">200+ Associates Coached</span>
                             </div>
-                            <div class="flex justify-between py-1">
-                                <span class="font-mono text-slate-500">CONTACT DIRECT</span>
-                                <a href="tel:+919940422506" class="font-mono font-semibold text-slate-900 hover:text-cobalt">+91-9940422506</a>
+                            <div class="flex items-center justify-between py-1 gap-2">
+                                <span class="font-mono text-slate-500 shrink-0">CONTACT DIRECT</span>
+                                <div id="dossier-contact-slot" class="text-right">
+                                    <button onclick="revealContactInfo()" class="font-mono text-[11px] font-semibold text-cobalt hover:text-blue-800 bg-blue-50 hover:bg-blue-100/80 border border-blue-200 px-2.5 py-1 rounded-md inline-flex items-center gap-1.5 transition-colors cursor-pointer">
+                                        <i data-lucide="lock" class="w-3 h-3"></i>
+                                        <span>Click to Reveal Contact</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="pt-1">
                             <a href="#explorer" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center justify-between transition-colors">
-                                <span>Inspect 9 Global Utility Programs</span>
+                                <span>8 Full-Lifecycle Rollouts + 1 Support Program</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -294,39 +317,40 @@
     <!-- 2. CENTERPIECE 1: INTERACTIVE GLOBAL UTILITY TRANSFORMATION EXPLORER -->
     <section id="explorer" class="py-16 sm:py-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-                <div>
-                    <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cobalt mb-2">
-                        <span class="w-2 h-2 rounded-full bg-cobalt"></span>
-                        CENTERPIECE 01 // GLOBAL DEPLOYMENT TELEMETRY
+            <div class="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <div class="inline-flex flex-wrap items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cobalt mb-2">
+                            <span class="w-2 h-2 rounded-full bg-cobalt"></span>
+                            <span>CENTERPIECE 01 // 8 FULL-LIFECYCLE IMPLEMENTATIONS + 1 PRODUCTION SUPPORT PROGRAM</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                            Global Utility Transformation Explorer
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600 mt-1 max-w-3xl">
+                            Inspect <strong>8 Full-Lifecycle Implementations</strong> (6M+ electric, gas &amp; water customers across the US, Canada &amp; the Caribbean) plus <strong>1 Large-Scale Production Support Program</strong> (<strong>Centrica, 15M+ UK accounts</strong>). Click any regional pin or utility pill below.
+                        </p>
                     </div>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-                        Global Utility Transformation Explorer
-                    </h2>
-                    <p class="text-sm sm:text-base text-slate-600 mt-1 max-w-2xl">
-                        Click any pulsing regional pin on the schematic map or select a utility pill below to inspect its S/4HANA, AMI, MDUS, or CR&amp;B delivery dossier.
-                    </p>
+
+                    <!-- Filter Pills -->
+                    <div class="inline-flex flex-wrap gap-1.5 bg-slate-50 p-1.5 rounded-xl border border-slate-200 shadow-2xs shrink-0">
+                        <button onclick="filterExplorer('all')" id="exp-filter-all" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white transition-colors cursor-pointer">
+                            ALL (8 IMPL + 1 SUPP)
+                        </button>
+                        <button onclick="filterExplorer('s4-ami')" id="exp-filter-s4-ami" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white transition-colors cursor-pointer">
+                            S/4HANA &amp; AMI IMPL (7)
+                        </button>
+                        <button onclick="filterExplorer('crb-support')" id="exp-filter-crb-support" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white transition-colors cursor-pointer">
+                            CR&amp;B (1) &amp; UK SUPPORT (1)
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Filter Pills -->
-                <div class="inline-flex flex-wrap gap-1.5 bg-white p-1.5 rounded-xl border border-slate-200 shadow-2xs">
-                    <button onclick="filterExplorer('all')" id="exp-filter-all" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white transition-colors cursor-pointer">
-                        ALL (9)
-                    </button>
-                    <button onclick="filterExplorer('s4-ami')" id="exp-filter-s4-ami" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
-                        S/4HANA &amp; AMI (7)
-                    </button>
-                    <button onclick="filterExplorer('crb-support')" id="exp-filter-crb-support" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
-                        CR&amp;B &amp; SUPPORT (2)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Main Explorer Split Grid: Interactive SVG Map (7 cols) + Architecture Dossier (5 cols) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                
-                <!-- Left: Custom Interactive Schematic SVG Map + Program Selector Strip -->
-                <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col justify-between">
+                <!-- Main Explorer Split Grid: Interactive SVG Map (7 cols) + Architecture Dossier (5 cols) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                    
+                    <!-- Left: Custom Interactive Schematic SVG Map + Program Selector Strip -->
+                    <div class="lg:col-span-7 bg-slate-50/60 border border-slate-200 rounded-2xl p-4 sm:p-6 flex flex-col justify-between">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                         <div class="flex items-center gap-2 font-mono text-xs text-slate-600">
                             <i data-lucide="globe-2" class="w-4 h-4 text-cobalt"></i>
@@ -410,21 +434,23 @@
                     </div>
                 </div>
 
-                <!-- Right: Rich Architecture & Delivery Dossier Card -->
-                <div class="lg:col-span-5">
-                    <div id="utility-dossier-card" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm h-full flex flex-col justify-between space-y-6">
-                        <!-- Dynamically Populated by JS -->
+                    <!-- Right: Rich Architecture & Delivery Dossier Card -->
+                    <div class="lg:col-span-5">
+                        <div id="utility-dossier-card" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-xs h-full flex flex-col justify-between space-y-6">
+                            <!-- Dynamically Populated by JS -->
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 3. CENTERPIECE 2: INTERACTIVE AGENTIC AI + SAP IS-U DELIVERY PLAYGROUND -->
-    <section id="ai-playground" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+    <section id="ai-playground" class="py-16 sm:py-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+            <div class="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
                 <div class="space-y-2 max-w-3xl">
                     <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-agentic">
                         <span class="w-2 h-2 rounded-full bg-agentic"></span>
@@ -573,6 +599,7 @@
                     </div>
                 </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -580,104 +607,109 @@
     <!-- 4. INTERACTIVE S/4HANA & AMI INTEGRATION ARCHITECTURE DIAGRAM -->
     <section id="architecture" class="py-16 sm:py-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="space-y-2 max-w-3xl mb-10">
-                <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-telemetry">
-                    <span class="w-2 h-2 rounded-full bg-telemetry"></span>
-                    END-TO-END ENTERPRISE TOPOLOGY
+            <div class="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div class="space-y-2 max-w-3xl mb-10">
+                    <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-telemetry">
+                        <span class="w-2 h-2 rounded-full bg-telemetry"></span>
+                        END-TO-END ENTERPRISE TOPOLOGY
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                        Interactive S/4HANA &amp; AMI Integration Architecture
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600">
+                        Click any architectural layer below to inspect Biman’s hands-on functional design, integration protocols, and delivery deliverables.
+                    </p>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-                    Interactive S/4HANA &amp; AMI Integration Architecture
-                </h2>
-                <p class="text-sm sm:text-base text-slate-600">
-                    Click any architectural layer below to inspect Biman’s hands-on functional design, integration protocols, and delivery deliverables.
-                </p>
-            </div>
 
-            <!-- Horizontal 4-Node Interactive Stack -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch mb-6">
-                <button onclick="selectArchNode(0)" id="arch-node-0" class="arch-node text-left p-5 rounded-2xl border-2 border-cobalt bg-white shadow-sm transition-all cursor-pointer flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-telemetry border border-emerald-200">LAYER 01 // FIELD</span>
-                        <i data-lucide="radio" class="w-5 h-5 text-telemetry"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-base">Smart Meters &amp; AMI Head-End</h3>
-                        <p class="font-mono text-xs text-slate-500 mt-1">Electric, Gas, Water &bull; RTU &bull; Opt-Out</p>
-                    </div>
-                </button>
+                <!-- Horizontal 4-Node Interactive Stack -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch mb-6">
+                    <button onclick="selectArchNode(0)" id="arch-node-0" class="arch-node text-left p-5 rounded-2xl border-2 border-cobalt bg-white shadow-sm transition-all cursor-pointer flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-telemetry border border-emerald-200">LAYER 01 // FIELD</span>
+                            <i data-lucide="radio" class="w-5 h-5 text-telemetry"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">Smart Meters &amp; AMI Head-End</h3>
+                            <p class="font-mono text-xs text-slate-500 mt-1">Electric, Gas, Water &bull; RTU &bull; Opt-Out</p>
+                        </div>
+                    </button>
 
-                <button onclick="selectArchNode(1)" id="arch-node-1" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-blue-50 text-cobalt border border-blue-200">LAYER 02 // MIDDLEWARE</span>
-                        <i data-lucide="arrow-left-right" class="w-5 h-5 text-cobalt"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-base">MDMS / MDUS Integration Layer</h3>
-                        <p class="font-mono text-xs text-slate-500 mt-1">Enterprise Services &bull; Interval Reads &bull; Events</p>
-                    </div>
-                </button>
+                    <button onclick="selectArchNode(1)" id="arch-node-1" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-blue-50 text-cobalt border border-blue-200">LAYER 02 // MIDDLEWARE</span>
+                            <i data-lucide="arrow-left-right" class="w-5 h-5 text-cobalt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">MDMS / MDUS Integration Layer</h3>
+                            <p class="font-mono text-xs text-slate-500 mt-1">Enterprise Services &bull; Interval Reads &bull; Events</p>
+                        </div>
+                    </button>
 
-                <button onclick="selectArchNode(2)" id="arch-node-2" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-300">LAYER 03 // CORE ERP</span>
-                        <i data-lucide="server" class="w-5 h-5 text-slate-800"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-base">SAP S/4HANA Private Cloud</h3>
-                        <p class="font-mono text-xs text-slate-500 mt-1">IS-U Device Mgmt &bull; Billing &amp; CR&amp;B</p>
-                    </div>
-                </button>
+                    <button onclick="selectArchNode(2)" id="arch-node-2" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-300">LAYER 03 // CORE ERP</span>
+                            <i data-lucide="server" class="w-5 h-5 text-slate-800"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">SAP S/4HANA Private Cloud</h3>
+                            <p class="font-mono text-xs text-slate-500 mt-1">IS-U Device Mgmt &bull; Billing &amp; CR&amp;B</p>
+                        </div>
+                    </button>
 
-                <button onclick="selectArchNode(3)" id="arch-node-3" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-amber-50 text-agentic border border-amber-200">LAYER 04 // INTELLIGENCE</span>
-                        <i data-lucide="cpu" class="w-5 h-5 text-agentic"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-base">SAP Business AI &amp; Joule Agents</h3>
-                        <p class="font-mono text-xs text-slate-500 mt-1">Joule Studio &bull; Claude &bull; OpenAI API</p>
-                    </div>
-                </button>
-            </div>
+                    <button onclick="selectArchNode(3)" id="arch-node-3" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-amber-50 text-agentic border border-amber-200">LAYER 04 // INTELLIGENCE</span>
+                            <i data-lucide="cpu" class="w-5 h-5 text-agentic"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">SAP Business AI &amp; Joule Agents</h3>
+                            <p class="font-mono text-xs text-slate-500 mt-1">Joule Studio &bull; Claude &bull; OpenAI API</p>
+                        </div>
+                    </button>
+                </div>
 
-            <!-- Selected Architecture Node Detail Panel -->
-            <div id="arch-detail-panel" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                <!-- Populated by JS -->
+                <!-- Selected Architecture Node Detail Panel -->
+                <div id="arch-detail-panel" class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-2xs">
+                    <!-- Populated by JS -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 5. VERIFIED CREDENTIALS, CAREER TIMELINE & EDUCATION MATRIX -->
-    <section id="credentials" class="py-16 sm:py-20 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="credentials" class="py-16 sm:py-20 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             
-            <!-- Part A: Filterable Certifications Grid (All 11 Credentials) -->
-            <div>
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <!-- Part A: Grouped Certifications Grid (8 SAP Global + 3 AI & Lean Six Sigma) -->
+            <div class="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
                     <div>
                         <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cobalt mb-2">
                             <span class="w-2 h-2 rounded-full bg-cobalt"></span>
-                            VERIFIED CERTIFICATIONS (11)
+                            <span>VERIFIED CREDENTIALS // 8 SAP GLOBAL + 3 AI &amp; LEAN SIX SIGMA</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-                            SAP Global Certifications &amp; AI Credentials
+                            SAP Global Certifications &amp; Practitioner Credentials
                         </h2>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Click any SAP certification card below to verify directly on <a href="https://www.credly.com/users/bimanghosh/badges/credly" target="_blank" rel="noopener noreferrer" class="font-semibold text-cobalt hover:underline">Credly &rarr;</a>
+                        </p>
                     </div>
 
-                    <div class="inline-flex flex-wrap gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+                    <div class="inline-flex flex-wrap gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200 self-start lg:self-auto shrink-0">
                         <button onclick="filterCerts('all')" id="cert-filter-all" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer">ALL (11)</button>
-                        <button onclick="filterCerts('ai')" id="cert-filter-ai" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white cursor-pointer">AGENTIC AI &amp; JOULE (6)</button>
-                        <button onclick="filterCerts('sap')" id="cert-filter-sap" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white cursor-pointer">S/4HANA &amp; UTILITIES (5)</button>
+                        <button onclick="filterCerts('sap-global')" id="cert-filter-sap-global" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white cursor-pointer">SAP GLOBAL CERTIFICATIONS (8)</button>
+                        <button onclick="filterCerts('ai-lean')" id="cert-filter-ai-lean" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white cursor-pointer">AI &amp; LEAN SIX SIGMA (3)</button>
                     </div>
                 </div>
 
-                <div id="certifications-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div id="certifications-grid" class="space-y-8">
                     <!-- Populated by JS -->
                 </div>
             </div>
 
             <!-- Part B: Career Leadership Timeline & Education -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pt-6 border-t border-slate-200">
+            <div class="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10">
                 <!-- Experience Timeline (8 cols) -->
                 <div class="lg:col-span-8 space-y-6">
                     <div>
@@ -768,17 +800,22 @@
                         <p class="font-mono text-[11px] uppercase tracking-wider text-amber-400">DIRECT EXECUTIVE CONTACT</p>
                         <h4 class="text-lg font-bold leading-snug">Ready to lead your next S/4HANA Utilities or Agentic AI initiative.</h4>
                         <div class="space-y-2.5 text-xs font-mono text-slate-300 pt-1">
-                            <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg">
-                                <span>biman7777@gmail.com</span>
-                                <button onclick="copyEmailAddress()" class="text-amber-400 hover:text-amber-300 font-semibold cursor-pointer">COPY</button>
-                            </div>
-                            <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg">
-                                <span>+91-9940422506</span>
-                                <a href="tel:+919940422506" class="text-blue-400 hover:text-blue-300 font-semibold">CALL</a>
+                            <div id="footer-contact-slot" class="space-y-2.5">
+                                <button onclick="revealContactInfo()" class="w-full flex items-center justify-between bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-2.5 rounded-lg transition-colors cursor-pointer text-left">
+                                    <span class="inline-flex items-center gap-2 text-slate-200 font-semibold">
+                                        <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
+                                        <span>Click to Reveal Direct Email &amp; Phone</span>
+                                    </span>
+                                    <span class="text-amber-400 font-semibold">REVEAL &rarr;</span>
+                                </button>
                             </div>
                             <a href="https://www.linkedin.com/in/bimanghsh" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between bg-slate-800/80 hover:bg-slate-800 px-3 py-2 rounded-lg transition-colors">
                                 <span>linkedin.com/in/bimanghsh</span>
                                 <span class="text-emerald-400 font-semibold">OPEN &rarr;</span>
+                            </a>
+                            <a href="https://www.credly.com/users/bimanghosh/badges/credly" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between bg-slate-800/80 hover:bg-slate-800 px-3 py-2 rounded-lg transition-colors">
+                                <span>credly.com/users/bimanghosh</span>
+                                <span class="text-amber-400 font-semibold">VERIFY &rarr;</span>
                             </a>
                         </div>
                         <button onclick="openResumeModal()" class="w-full py-2.5 rounded-xl bg-cobalt hover:bg-blue-600 text-white font-sans font-semibold text-xs transition-colors cursor-pointer">
@@ -1579,21 +1616,64 @@
         }
 
         // =========================================================================
-        // 4. ALL 11 CERTIFICATIONS DATA & FILTERING
+        // 4. ALL 11 CERTIFICATIONS DATA & GROUPED RENDERING (8 SAP GLOBAL + 3 AI & LEAN)
         // =========================================================================
+        const credlyProfileUrl = 'https://www.credly.com/users/bimanghosh/badges/credly';
+
         const certificationsList = [
-            { title: 'SAP Certified - Joule Studio Developer', group: 'ai', badge: 'SAP GLOBAL // AI' },
-            { title: 'SAP Certified - Solution Architect - SAP Business AI Platform', group: 'ai', badge: 'SAP GLOBAL // AI' },
-            { title: 'SAP Certified - S/4HANA Cloud Private Edition Implementation Consultant', group: 'sap', badge: 'SAP GLOBAL // S/4HANA' },
-            { title: 'SAP Certified - Generative AI Developer', group: 'ai', badge: 'SAP GLOBAL // AI' },
-            { title: 'SAP Certified - SAP Enterprise Architect', group: 'sap', badge: 'SAP GLOBAL // ARCHITECTURE' },
-            { title: 'SAP Certified - Project Manager - SAP Activate for Agile Implementation Management', group: 'sap', badge: 'SAP GLOBAL // AGILE PM' },
-            { title: 'SAP Certified Associate - Utilities with SAP ERP 6.0', group: 'sap', badge: 'SAP GLOBAL // UTILITIES' },
-            { title: 'SAP Certified - Positioning the Autonomous Enterprise', group: 'ai', badge: 'SAP GLOBAL // AUTONOMOUS' },
-            { title: 'Codex Technical Practitioner', group: 'ai', badge: 'PRACTITIONER CREDENTIAL' },
-            { title: 'Codex Solutions Practitioner', group: 'ai', badge: 'PRACTITIONER CREDENTIAL' },
-            { title: 'Six Sigma Yellow Belt', group: 'sap', badge: 'LEAN PROCESS EXCELLENCE' }
+            // 8 SAP Global Certifications
+            { title: 'SAP Certified - Joule Studio Developer', group: 'sap-global', badge: 'SAP GLOBAL // BUSINESS AI', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified - Solution Architect - SAP Business AI Platform', group: 'sap-global', badge: 'SAP GLOBAL // BUSINESS AI', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified - S/4HANA Cloud Private Edition Implementation Consultant', group: 'sap-global', badge: 'SAP GLOBAL // S/4HANA', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified - Generative AI Developer', group: 'sap-global', badge: 'SAP GLOBAL // GENAI', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified - SAP Enterprise Architect', group: 'sap-global', badge: 'SAP GLOBAL // ARCHITECTURE', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified - Project Manager - SAP Activate for Agile Implementation Management', group: 'sap-global', badge: 'SAP GLOBAL // AGILE PM', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified Associate - Utilities with SAP ERP 6.0', group: 'sap-global', badge: 'SAP GLOBAL // UTILITIES', verifiedUrl: credlyProfileUrl },
+            { title: 'SAP Certified - Positioning the Autonomous Enterprise', group: 'sap-global', badge: 'SAP GLOBAL // AUTONOMOUS', verifiedUrl: credlyProfileUrl },
+            // 3 AI & Lean Six Sigma Credentials
+            { title: 'Codex Technical Practitioner', group: 'ai-lean', badge: 'AI PRACTITIONER CREDENTIAL', verifiedUrl: null },
+            { title: 'Codex Solutions Practitioner', group: 'ai-lean', badge: 'AI PRACTITIONER CREDENTIAL', verifiedUrl: null },
+            { title: 'Six Sigma Yellow Belt', group: 'ai-lean', badge: 'LEAN SIX SIGMA EXCELLENCE', verifiedUrl: null }
         ];
+
+        function renderCertCard(cert) {
+            const isSapGlobal = cert.group === 'sap-global';
+            const iconStyle = isSapGlobal
+                ? 'bg-blue-50 border-blue-200 text-cobalt'
+                : 'bg-amber-50 border-amber-200 text-agentic';
+
+            if (cert.verifiedUrl) {
+                return `
+                    <a href="${cert.verifiedUrl}" target="_blank" rel="noopener noreferrer" class="group bg-slate-50/90 hover:bg-blue-50/40 border border-slate-200 hover:border-cobalt rounded-xl p-4 flex items-start justify-between gap-3.5 transition-all shadow-2xs">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <div class="w-9 h-9 rounded-lg ${iconStyle} border flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="badge-check" class="w-4 h-4"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <span class="font-mono text-[10px] font-bold tracking-wider text-cobalt">${cert.badge}</span>
+                                <h3 class="font-bold text-sm text-slate-900 group-hover:text-cobalt leading-snug mt-0.5 transition-colors">${cert.title}</h3>
+                                <span class="inline-flex items-center gap-1 font-mono text-[10px] text-slate-500 group-hover:text-cobalt mt-1.5">
+                                    <span>Verify on Credly</span>
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }
+
+            return `
+                <div class="bg-slate-50/90 border border-slate-200 rounded-xl p-4 flex items-start gap-3.5 shadow-2xs">
+                    <div class="w-9 h-9 rounded-lg ${iconStyle} border flex items-center justify-center shrink-0 mt-0.5">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="font-mono text-[10px] font-bold tracking-wider text-amber-800">${cert.badge}</span>
+                        <h3 class="font-bold text-sm text-slate-900 leading-snug mt-0.5">${cert.title}</h3>
+                    </div>
+                </div>
+            `;
+        }
 
         function filterCerts(filter = 'all') {
             document.querySelectorAll('.cert-filter').forEach(btn => {
@@ -1606,24 +1686,169 @@
                 active.classList.remove('text-slate-600');
             }
 
-            const items = filter === 'all' ? certificationsList : certificationsList.filter(c => c.group === filter);
-            document.getElementById('certifications-grid').innerHTML = items.map(cert => `
-                <div class="bg-slate-50 border border-slate-200 hover:border-cobalt/50 rounded-xl p-4 flex items-start gap-3.5 transition-colors">
-                    <div class="w-9 h-9 rounded-lg ${cert.group === 'ai' ? 'bg-amber-50 border-amber-200 text-agentic' : 'bg-blue-50 border-blue-200 text-cobalt'} border flex items-center justify-center shrink-0 mt-0.5">
-                        <i data-lucide="badge-check" class="w-4 h-4"></i>
+            const sapCerts = certificationsList.filter(c => c.group === 'sap-global');
+            const aiLeanCerts = certificationsList.filter(c => c.group === 'ai-lean');
+            const container = document.getElementById('certifications-grid');
+
+            if (filter === 'all') {
+                container.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-cobalt flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                <span>SAP Global Certifications (8) — Click Any Card to Verify on Credly</span>
+                            </h3>
+                            <a href="${credlyProfileUrl}" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] font-semibold text-cobalt hover:underline hidden sm:inline-flex items-center gap-1">
+                                <span>Credly Profile</span>
+                                <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                            ${sapCerts.map(renderCertCard).join('')}
+                        </div>
                     </div>
-                    <div>
-                        <span class="font-mono text-[10px] font-bold tracking-wider text-slate-400">${cert.badge}</span>
-                        <h3 class="font-bold text-sm text-slate-900 leading-snug mt-0.5">${cert.title}</h3>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-agentic flex items-center gap-2">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                <span>AI &amp; Lean Six Sigma Credentials (3)</span>
+                            </h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                            ${aiLeanCerts.map(renderCertCard).join('')}
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            } else if (filter === 'sap-global') {
+                container.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-cobalt">SAP Global Certifications (8)</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                            ${sapCerts.map(renderCertCard).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-agentic">AI &amp; Lean Six Sigma Credentials (3)</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                            ${aiLeanCerts.map(renderCertCard).join('')}
+                        </div>
+                    </div>
+                `;
+            }
             lucide.createIcons();
         }
 
         // =========================================================================
-        // 5. MODAL, MOBILE NAV, SCROLL-TO-TOP, CLIPBOARD & TOAST UTILITIES
+        // 5. MODAL, MOBILE NAV, SCROLL-TO-TOP, ANTI-SCRAPER CONTACT & TOAST UTILITIES
         // =========================================================================
+        // Encoded/split contact parts (not present in static HTML DOM)
+        const _cParts = {
+            u: ['biman', '7777'],
+            d: ['gmail', 'com'],
+            cc: '+91',
+            p: ['99404', '22506']
+        };
+
+        function _getDecodedContact() {
+            const email = _cParts.u.join('') + String.fromCharCode(64) + _cParts.d.join('.');
+            const phoneDisplay = _cParts.cc + '-' + _cParts.p.join('');
+            const phoneHref = 'tel:' + _cParts.cc + _cParts.p.join('');
+            return { email, phoneDisplay, phoneHref };
+        }
+
+        let isContactRevealed = false;
+        function revealContactInfo() {
+            const { email, phoneDisplay, phoneHref } = _getDecodedContact();
+            isContactRevealed = true;
+
+            const heroSlot = document.getElementById('hero-contact-slot');
+            if (heroSlot) {
+                heroSlot.innerHTML = `
+                    <div class="inline-flex flex-wrap items-center gap-2">
+                        <button onclick="copyContactValue('email')" class="px-3.5 py-2.5 rounded-xl bg-blue-50/80 hover:bg-blue-100/80 text-slate-800 border border-blue-200 font-mono text-xs font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer" title="Copy Email">
+                            <i data-lucide="mail" class="w-3.5 h-3.5 text-cobalt"></i>
+                            <span>${email}</span>
+                            <i data-lucide="copy" class="w-3 h-3 text-cobalt ml-0.5"></i>
+                        </button>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-emerald-50/80 text-slate-800 border border-emerald-200 font-mono text-xs font-semibold inline-flex items-center gap-2">
+                            <a href="${phoneHref}" class="hover:text-telemetry inline-flex items-center gap-1.5">
+                                <i data-lucide="phone" class="w-3.5 h-3.5 text-telemetry"></i>
+                                <span>${phoneDisplay}</span>
+                            </a>
+                            <button onclick="copyContactValue('phone')" class="text-slate-500 hover:text-telemetry cursor-pointer" title="Copy Phone">
+                                <i data-lucide="copy" class="w-3 h-3"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const dossierSlot = document.getElementById('dossier-contact-slot');
+            if (dossierSlot) {
+                dossierSlot.innerHTML = `
+                    <div class="inline-flex flex-wrap items-center justify-end gap-1.5 font-mono text-[11px]">
+                        <button onclick="copyContactValue('phone')" class="font-semibold text-slate-900 hover:text-cobalt inline-flex items-center gap-1 cursor-pointer" title="Copy Phone">
+                            <span>${phoneDisplay}</span>
+                            <i data-lucide="copy" class="w-3 h-3 text-cobalt"></i>
+                        </button>
+                        <span class="text-slate-300">&bull;</span>
+                        <button onclick="copyContactValue('email')" class="font-semibold text-cobalt hover:underline inline-flex items-center gap-1 cursor-pointer" title="Copy Email">
+                            <span>${email}</span>
+                            <i data-lucide="copy" class="w-3 h-3"></i>
+                        </button>
+                    </div>
+                `;
+            }
+
+            const footerSlot = document.getElementById('footer-contact-slot');
+            if (footerSlot) {
+                footerSlot.innerHTML = `
+                    <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg">
+                        <span>${email}</span>
+                        <button onclick="copyContactValue('email')" class="text-amber-400 hover:text-amber-300 font-semibold cursor-pointer inline-flex items-center gap-1">
+                            <i data-lucide="copy" class="w-3 h-3"></i>
+                            <span>COPY</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg">
+                        <a href="${phoneHref}" class="hover:text-white">${phoneDisplay}</a>
+                        <button onclick="copyContactValue('phone')" class="text-blue-400 hover:text-blue-300 font-semibold cursor-pointer inline-flex items-center gap-1">
+                            <i data-lucide="copy" class="w-3 h-3"></i>
+                            <span>COPY</span>
+                        </button>
+                    </div>
+                `;
+            }
+
+            lucide.createIcons();
+            showToast('Direct contact details revealed.');
+        }
+
+        function copyContactValue(type) {
+            const { email, phoneDisplay } = _getDecodedContact();
+            const val = type === 'phone' ? phoneDisplay : email;
+            const label = type === 'phone' ? 'phone' : 'email';
+            const temp = document.createElement('textarea');
+            temp.value = val;
+            temp.style.position = 'fixed';
+            temp.style.opacity = '0';
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand('copy');
+                showToast(`Copied ${label}: ${val}`);
+            } catch (e) {
+                showToast(`${label.toUpperCase()}: ${val}`);
+            }
+            document.body.removeChild(temp);
+        }
         function toggleMobileNav() {
             const drawer = document.getElementById('mobile-nav-drawer');
             const btn = document.getElementById('mobile-menu-btn');
@@ -1685,22 +1910,6 @@
 
         function closeModalOnBackdrop(event, id) {
             if (event.target.id === id) closeModal(id);
-        }
-
-        function copyEmailAddress() {
-            const temp = document.createElement('textarea');
-            temp.value = 'biman7777@gmail.com';
-            temp.style.position = 'fixed';
-            temp.style.opacity = '0';
-            document.body.appendChild(temp);
-            temp.select();
-            try {
-                document.execCommand('copy');
-                showToast('Copied email: biman7777@gmail.com');
-            } catch (e) {
-                showToast('Email: biman7777@gmail.com');
-            }
-            document.body.removeChild(temp);
         }
 
         let toastTimer;
