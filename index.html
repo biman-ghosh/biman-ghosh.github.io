@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biman Ghosh — SAP Functional Architect | IS-U DM & AMI SME | S/4HANA | Agentic AI</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#F8F9FA',
+                        ink: '#0F172A',
+                        cobalt: '#1D4ED8',
+                        telemetry: '#059669',
+                        agentic: '#D97706',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Architectural Blueprint Paper Grid */
+        .blueprint-canvas {
+            background-color: #F8F9FA;
+            background-image:
+                linear-gradient(to right, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+                linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+            background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+        }
+
+        /* Subtle Map Pin Pulse */
+        @keyframes pinPulse {
+            0% { transform: scale(1); opacity: 0.75; }
+            70% { transform: scale(2.1); opacity: 0; }
+            100% { transform: scale(2.1); opacity: 0; }
+        }
+        .map-pin-ring {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: pinPulse 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+        }
+
+        /* Animated Telemetry Dash */
+        @keyframes dashFlow {
+            to { stroke-dashoffset: -24; }
+        }
+        .telemetry-flow {
+            stroke-dasharray: 6 6;
+            animation: dashFlow 1.4s linear infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #F1F5F9; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+        /* Print Styles for Resume Modal */
+        @media print {
+            body * { visibility: hidden; }
+            #printable-resume-area, #printable-resume-area * { visibility: visible; }
+            #printable-resume-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background: #FFFFFF !important;
+                color: #0F172A !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 16px !important;
+            }
+        }
+    </style>
+</head>
+<body class="blueprint-canvas text-ink font-sans antialiased selection:bg-blue-600/15 selection:text-blue-900">
+
+    <!-- 1. TOP ARCHITECTURAL NAVIGATION -->
+    <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            <!-- Left Monogram & Identity -->
+            <div class="flex items-center gap-3 min-w-0">
+                <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+                    <span class="w-8 h-8 rounded-lg bg-slate-900 text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-cobalt transition-colors">
+                        BG
+                    </span>
+                    <span class="font-bold tracking-tight text-slate-900 text-sm sm:text-base">
+                        BIMAN GHOSH
+                    </span>
+                </a>
+                <span class="hidden xl:inline-block text-slate-300">|</span>
+                <span class="hidden xl:inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 truncate">
+                    <span>Kolkata, India</span>
+                    <span class="text-slate-300">&bull;</span>
+                    <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                        Open to Senior Manager / Functional Architect Leadership
+                    </span>
+                </span>
+            </div>
+
+            <!-- Center Navigation -->
+            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600">
+                <a href="#explorer" class="hover:text-cobalt transition-colors">Global Explorer</a>
+                <a href="#ai-playground" class="hover:text-cobalt transition-colors">AI Sandbox</a>
+                <a href="#architecture" class="hover:text-cobalt transition-colors">S/4HANA Stack</a>
+                <a href="#credentials" class="hover:text-cobalt transition-colors">Credentials</a>
+            </nav>
+
+            <!-- Right Quick Actions -->
+            <div class="flex items-center gap-2">
+                <button onclick="openResumeModal()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 text-xs font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-xs">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-cobalt"></i>
+                    <span class="hidden sm:inline">Printable CV</span>
+                    <span class="sm:hidden">CV</span>
+                </button>
+                <a href="#ai-playground" class="px-3.5 py-2 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold transition-all inline-flex items-center gap-1.5 shadow-xs">
+                    <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                    <span>Launch Sandbox</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="border-b border-slate-200/90 bg-gradient-to-b from-white/80 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-14 sm:pt-16 sm:pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Left Architectural Thesis -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-cobalt font-mono text-xs font-semibold">
+                            SAP IS-U DEVICE MANAGEMENT &amp; AMI SME
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 font-mono text-xs font-semibold">
+                            AGENTIC AI IN SAP &bull; JOULE STUDIO
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-xs font-semibold">
+                            S/4HANA PRIVATE CLOUD
+                        </span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                        Architecting Utility Transformations at <span class="text-cobalt">6M+ Customer Scale</span>—Powered by S/4HANA &amp; Agentic AI.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+                        SAP Functional Architect with <strong>13 years</strong> and <strong>8 full-lifecycle implementations</strong> bridging utility operations and technical engineering across the US, Canada, the UK, and the Caribbean. Currently leading greenfield <strong>S/4HANA Private Cloud</strong> delivery and coaching <strong>200+ associates</strong> in Enterprise Generative &amp; Agentic AI.
+                    </p>
+
+                    <!-- Action Row -->
+                    <div class="pt-1 flex flex-wrap items-center gap-3">
+                        <a href="#ai-playground" class="px-5 py-3 rounded-xl bg-cobalt hover:bg-blue-800 text-white font-semibold text-sm transition-all inline-flex items-center gap-2 shadow-sm">
+                            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                            <span>Launch Interactive Sandbox</span>
+                        </a>
+                        <button onclick="openResumeModal()" class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-semibold text-sm transition-all inline-flex items-center gap-2 shadow-xs cursor-pointer">
+                            <i data-lucide="printer" class="w-4 h-4 text-slate-600"></i>
+                            <span>Download Printable CV</span>
+                        </button>
+                        <button onclick="copyEmailAddress()" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-mono text-xs font-medium transition-all inline-flex items-center gap-2 cursor-pointer">
+                            <i data-lucide="copy" class="w-3.5 h-3.5 text-cobalt"></i>
+                            <span>biman7777@gmail.com</span>
+                        </button>
+                        <a href="https://www.linkedin.com/in/bimanghsh" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-semibold transition-all inline-flex items-center gap-1.5">
+                            <i data-lucide="linkedin" class="w-3.5 h-3.5 text-cobalt"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Live Telemetry & Executive Specification Card -->
+                <div class="lg:col-span-4">
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <div>
+                                <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400">ARCHITECT DOSSIER // ID-BG26</p>
+                                <p class="font-bold text-slate-900 text-base mt-0.5">Functional Architect (Consulting Manager)</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[11px] font-semibold">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                                ACTIVE
+                            </span>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div class="flex justify-between py-1 border-b border-slate-100">
+                                <span class="font-mono text-slate-500">CURRENT PRACTICE</span>
+                                <span class="font-semibold text-slate-900">Cognizant (Utilities &amp; AI)</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-100">
+                                <span class="font-mono text-slate-500">PRIMARY LANDSCAPE</span>
+                                <span class="font-mono font-semibold text-cobalt">S/4HANA Private Cloud</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-100">
+                                <span class="font-mono text-slate-500">CORE MODULES</span>
+                                <span class="font-mono font-semibold text-slate-800">IS-U DM / AMI / MDUS</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-100">
+                                <span class="font-mono text-slate-500">AI ENABLEMENT</span>
+                                <span class="font-mono font-semibold text-amber-700">200+ Associates Coached</span>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span class="font-mono text-slate-500">CONTACT DIRECT</span>
+                                <a href="tel:+919940422506" class="font-mono font-semibold text-slate-900 hover:text-cobalt">+91-9940422506</a>
+                            </div>
+                        </div>
+
+                        <div class="pt-1">
+                            <a href="#explorer" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center justify-between transition-colors">
+                                <span>Inspect 9 Global Utility Programs</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVE METRIC STRIP (5 Telemetry Cards) -->
+            <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500">TENURE</p>
+                    <p class="font-mono text-2xl sm:text-3xl font-bold text-slate-900 mt-1">13+ Yrs</p>
+                    <p class="text-xs text-slate-600 mt-0.5">SAP Utilities Architecture</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500">LIFECYCLES</p>
+                    <p class="font-mono text-2xl sm:text-3xl font-bold text-cobalt mt-1">8</p>
+                    <p class="text-xs text-slate-600 mt-0.5">Full-Lifecycle Rollouts</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500">FOOTPRINT</p>
+                    <p class="font-mono text-2xl sm:text-3xl font-bold text-telemetry mt-1">6M+</p>
+                    <p class="text-xs text-slate-600 mt-0.5">Utility Customers (+15M UK)</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500">AI COACHING</p>
+                    <p class="font-mono text-2xl sm:text-3xl font-bold text-agentic mt-1">200+</p>
+                    <p class="text-xs text-slate-600 mt-0.5">Associates Coached in GenAI</p>
+                </div>
+                <div class="col-span-2 sm:col-span-1 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500">QUALITY GATE</p>
+                    <p class="font-mono text-2xl sm:text-3xl font-bold text-slate-900 mt-1">0 Defects</p>
+                    <p class="text-xs text-slate-600 mt-0.5">Post-Go-Live (PSE 20k Scale)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. CENTERPIECE 1: INTERACTIVE GLOBAL UTILITY TRANSFORMATION EXPLORER -->
+    <section id="explorer" class="py-16 sm:py-20 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                <div>
+                    <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cobalt mb-2">
+                        <span class="w-2 h-2 rounded-full bg-cobalt"></span>
+                        CENTERPIECE 01 // GLOBAL DEPLOYMENT TELEMETRY
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                        Global Utility Transformation Explorer
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 mt-1 max-w-2xl">
+                        Click any pulsing regional pin on the schematic map or select a utility pill below to inspect its S/4HANA, AMI, MDUS, or CR&amp;B delivery dossier.
+                    </p>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="inline-flex flex-wrap gap-1.5 bg-white p-1.5 rounded-xl border border-slate-200 shadow-2xs">
+                    <button onclick="filterExplorer('all')" id="exp-filter-all" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white transition-colors cursor-pointer">
+                        ALL (9)
+                    </button>
+                    <button onclick="filterExplorer('s4-ami')" id="exp-filter-s4-ami" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+                        S/4HANA &amp; AMI (7)
+                    </button>
+                    <button onclick="filterExplorer('crb-support')" id="exp-filter-crb-support" class="exp-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+                        CR&amp;B &amp; SUPPORT (2)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Explorer Split Grid: Interactive SVG Map (7 cols) + Architecture Dossier (5 cols) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                
+                <!-- Left: Custom Interactive Schematic SVG Map + Program Selector Strip -->
+                <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <div class="flex items-center gap-2 font-mono text-xs text-slate-600">
+                            <i data-lucide="globe-2" class="w-4 h-4 text-cobalt"></i>
+                            <span>TRANS-REGIONAL UTILITY GRID // US &bull; CANADA &bull; CARIBBEAN &bull; UK</span>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-3 font-mono text-[11px]">
+                            <span class="inline-flex items-center gap-1 text-cobalt font-semibold"><span class="w-2 h-2 rounded-full bg-cobalt"></span>S/4HANA &amp; AMI</span>
+                            <span class="inline-flex items-center gap-1 text-telemetry font-semibold"><span class="w-2 h-2 rounded-full bg-telemetry"></span>CR&amp;B / Support</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive SVG Schematic World/Regional Map -->
+                    <div class="relative w-full rounded-xl bg-slate-50 border border-slate-200/80 overflow-hidden">
+                        <svg id="utility-world-svg" viewBox="0 0 820 420" class="w-full h-auto block select-none" role="img" aria-label="Interactive Utility Transformation Map">
+                            <defs>
+                                <pattern id="svg-subgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="0.7"/>
+                                </pattern>
+                            </defs>
+                            <rect width="820" height="420" fill="#F8FAFC"/>
+                            <rect width="820" height="420" fill="url(#svg-subgrid)"/>
+
+                            <!-- Latitude / Longitude Architectural Reference Lines -->
+                            <line x1="0" y1="110" x2="820" y2="110" stroke="#CBD5E1" stroke-width="0.8" stroke-dasharray="4 4"/>
+                            <line x1="0" y1="220" x2="820" y2="220" stroke="#CBD5E1" stroke-width="0.8" stroke-dasharray="4 4"/>
+                            <line x1="0" y1="330" x2="820" y2="330" stroke="#CBD5E1" stroke-width="0.8" stroke-dasharray="4 4"/>
+                            <line x1="260" y1="0" x2="260" y2="420" stroke="#CBD5E1" stroke-width="0.8" stroke-dasharray="4 4"/>
+                            <line x1="560" y1="0" x2="560" y2="420" stroke="#CBD5E1" stroke-width="0.8" stroke-dasharray="4 4"/>
+
+                            <!-- Stylized Architectural Continent Silhouettes -->
+                            <!-- Hawaii Inset Box -->
+                            <g id="region-hawaii">
+                                <rect x="26" y="265" width="128" height="92" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+                                <text x="36" y="282" font-family="JetBrains Mono, monospace" font-size="9" fill="#64748B" font-weight="600">HAWAIIAN ISLANDS</text>
+                                <path d="M52,306 L64,302 L68,310 L55,313 Z M76,314 L90,311 L94,320 L79,322 Z M102,324 L124,318 L132,334 L112,340 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.2"/>
+                            </g>
+
+                            <!-- North America (Canada & USA) -->
+                            <g id="region-na">
+                                <!-- Canada -->
+                                <path d="M165,65 L245,48 L365,45 L455,68 L485,112 L442,145 L385,148 L335,142 L205,142 L175,115 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.3"/>
+                                <text x="275" y="96" font-family="JetBrains Mono, monospace" font-size="11" fill="#64748B" font-weight="600" letter-spacing="2">CANADA</text>
+
+                                <!-- Continental USA -->
+                                <path d="M188,142 L335,142 L385,148 L442,145 L468,162 L445,212 L416,258 L394,256 L368,236 L325,244 L298,266 L268,246 L216,238 L184,205 L180,165 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.3"/>
+                                <text x="292" y="198" font-family="JetBrains Mono, monospace" font-size="11" fill="#64748B" font-weight="600" letter-spacing="2">UNITED STATES</text>
+                            </g>
+
+                            <!-- Caribbean / Curaçao -->
+                            <g id="region-caribbean">
+                                <rect x="385" y="292" width="152" height="86" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+                                <text x="395" y="309" font-family="JetBrains Mono, monospace" font-size="9" fill="#64748B" font-weight="600">CARIBBEAN // CURAÇAO</text>
+                                <path d="M412,332 Q445,326 472,338 Q495,346 516,342" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+                                <ellipse cx="478" cy="354" rx="16" ry="7" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.2"/>
+                            </g>
+
+                            <!-- United Kingdom & Western Europe -->
+                            <g id="region-uk">
+                                <path d="M615,82 L645,74 L662,102 L674,136 L658,158 L622,156 L614,134 L626,114 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.3"/>
+                                <path d="M588,116 L608,112 L610,138 L586,140 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.2"/>
+                                <path d="M686,158 L775,135 L795,215 L710,235 L678,195 Z" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.1"/>
+                                <text x="625" y="64" font-family="JetBrains Mono, monospace" font-size="10" fill="#64748B" font-weight="600">UNITED KINGDOM</text>
+                            </g>
+
+                            <!-- Delivery Bridge Arcs (Kolkata Offshore Delivery Hub -> Global Clients) -->
+                            <path d="M235,222 Q330,150 402,196" fill="none" stroke="#1D4ED8" stroke-width="1" stroke-opacity="0.28" class="telemetry-flow"/>
+                            <path d="M202,156 Q240,120 264,116" fill="none" stroke="#1D4ED8" stroke-width="1" stroke-opacity="0.28" class="telemetry-flow"/>
+                            <path d="M402,196 Q525,115 648,136" fill="none" stroke="#059669" stroke-width="1" stroke-opacity="0.28" class="telemetry-flow"/>
+
+                            <!-- Interactive Pins Container (Rendered via JS) -->
+                            <g id="svg-pins-layer"></g>
+                        </svg>
+                    </div>
+
+                    <!-- Quick Program Pills Strip -->
+                    <div class="mt-4">
+                        <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">SELECT UTILITY DEPLOYMENT:</p>
+                        <div id="utility-pills-container" class="flex flex-wrap gap-1.5">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Rich Architecture & Delivery Dossier Card -->
+                <div class="lg:col-span-5">
+                    <div id="utility-dossier-card" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm h-full flex flex-col justify-between space-y-6">
+                        <!-- Dynamically Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CENTERPIECE 2: INTERACTIVE AGENTIC AI + SAP IS-U DELIVERY PLAYGROUND -->
+    <section id="ai-playground" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+                <div class="space-y-2 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-agentic">
+                        <span class="w-2 h-2 rounded-full bg-agentic"></span>
+                        CENTERPIECE 02 // INTERACTIVE AGENTIC AI + SAP SANDBOX
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                        Agentic AI + SAP IS-U Delivery Playground
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600">
+                        Experience how Biman combines <strong>SAP Joule Studio</strong>, <strong>OpenAI API</strong>, and <strong>Anthropic Claude</strong> with 13 years of SAP IS-U Device Management expertise to automate exception triage, test generation, and S/4HANA blueprinting.
+                    </p>
+                </div>
+
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-amber-50 border border-amber-200 text-xs font-medium text-amber-900 shrink-0">
+                    <i data-lucide="award" class="w-4 h-4 text-agentic shrink-0"></i>
+                    <span>SAP Certified GenAI &amp; Joule Studio Developer &bull; AI Coach (200+ Associates)</span>
+                </div>
+            </div>
+
+            <!-- Scenario Switcher Tabs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                <button onclick="selectAiScenario('triage')" id="ai-tab-triage" class="ai-scenario-tab text-left p-4 rounded-xl border-2 border-cobalt bg-blue-50/50 transition-all cursor-pointer">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-mono text-[11px] font-bold uppercase text-cobalt">SCENARIO A // LIVE AGENT</span>
+                        <i data-lucide="activity" class="w-4 h-4 text-cobalt"></i>
+                    </div>
+                    <p class="font-bold text-slate-900 text-sm">AMI Meter-to-Cash Exception Triage Agent</p>
+                    <p class="text-xs text-slate-600 mt-0.5">SAP Joule + IS-U DM (<code class="font-mono text-[11px]">EG42</code> / <code class="font-mono text-[11px]">EL31</code>) root-cause agent</p>
+                </button>
+
+                <button onclick="selectAiScenario('testgen')" id="ai-tab-testgen" class="ai-scenario-tab text-left p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white transition-all cursor-pointer">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-mono text-[11px] font-bold uppercase text-slate-500">SCENARIO B // QA ACCELERATOR</span>
+                        <i data-lucide="check-square" class="w-4 h-4 text-slate-500"></i>
+                    </div>
+                    <p class="font-bold text-slate-900 text-sm">Automated IS-U Market-Transaction Test Generator</p>
+                    <p class="text-xs text-slate-600 mt-0.5">Inspired by 7,600-case EPCOR &amp; 20k-meter PSE scale</p>
+                </button>
+
+                <button onclick="selectAiScenario('blueprint')" id="ai-tab-blueprint" class="ai-scenario-tab text-left p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white transition-all cursor-pointer">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-mono text-[11px] font-bold uppercase text-slate-500">SCENARIO C // FIT-TO-STANDARD</span>
+                        <i data-lucide="file-code-2" class="w-4 h-4 text-slate-500"></i>
+                    </div>
+                    <p class="font-bold text-slate-900 text-sm">S/4HANA Utilities Blueprint &amp; WRICEF Copilot</p>
+                    <p class="text-xs text-slate-600 mt-0.5">SAP Activate + Claude/OpenAI functional spec synthesis</p>
+                </button>
+            </div>
+
+            <!-- Interactive Playground Workbench Container -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-xs">
+                
+                <!-- SCENARIO A WORKBENCH: AMI Meter-to-Cash Exception Triage Agent -->
+                <div id="workbench-triage" class="ai-workbench space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+                        <div>
+                            <span class="font-mono text-xs font-semibold text-cobalt">SAP JOULE STUDIO + IS-U DEVICE MANAGEMENT</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Autonomous MDUS / AMI Sync Exception Resolver</h3>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <select id="triage-exception-select" class="px-3 py-2 rounded-lg bg-white border border-slate-300 font-mono text-xs text-slate-800 focus:outline-none focus:border-cobalt">
+                                <option value="register-mismatch">ERR-MDUS-409: Register Group Mismatch on Meter Exchange (EG42)</option>
+                                <option value="interval-gap">ERR-AMI-212: 72-Hr Interval Read Gap Blocking Billing Order (EL31)</option>
+                                <option value="prepay-disconnect">ERR-PREPAY-108: Remote Disconnect Timeout on Low-Balance Trigger</option>
+                            </select>
+                            <button onclick="runTriageAgent()" id="run-triage-btn" class="px-4 py-2 rounded-lg bg-cobalt hover:bg-blue-800 text-white font-semibold text-xs inline-flex items-center gap-2 transition-colors cursor-pointer shadow-xs">
+                                <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                                <span>Run Agent Workflow</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 4-Step Execution Pipeline -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="triage-steps-grid">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Telemetry Comparison Banner -->
+                    <div id="triage-outcome-banner" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- SCENARIO B WORKBENCH: Automated SAP IS-U Market-Transaction Test Generator -->
+                <div id="workbench-testgen" class="ai-workbench hidden space-y-6">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+                        <div>
+                            <span class="font-mono text-xs font-semibold text-telemetry">SIT / UAT TEST MATRIX GENERATOR // EPCOR &amp; PSE METHODOLOGY</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Configure Utility Parameters &amp; Generate SAP IS-U / MDUS Test Cases</h3>
+                        </div>
+                        <button onclick="generateIsUTestCases()" class="px-4 py-2 rounded-lg bg-telemetry hover:bg-emerald-700 text-white font-semibold text-xs inline-flex items-center gap-2 transition-colors cursor-pointer self-start lg:self-auto shadow-xs">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span>Generate Test Suite</span>
+                        </button>
+                    </div>
+
+                    <!-- Interactive Parameter Toggles -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <label class="block font-mono text-[11px] font-semibold uppercase text-slate-500 mb-2">1. Commodity Division</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" onclick="setTestParam('commodity', 'Electric')" id="param-commodity-Electric" class="test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer">Electric (01)</button>
+                                <button type="button" onclick="setTestParam('commodity', 'Gas')" id="param-commodity-Gas" class="test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Gas (02)</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <label class="block font-mono text-[11px] font-semibold uppercase text-slate-500 mb-2">2. Billing / Account Model</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" onclick="setTestParam('billing', 'Postpay')" id="param-billing-Postpay" class="test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer">Postpay AMI</button>
+                                <button type="button" onclick="setTestParam('billing', 'Prepay')" id="param-billing-Prepay" class="test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Prepay AMI</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <label class="block font-mono text-[11px] font-semibold uppercase text-slate-500 mb-2">3. Market / Device Process</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" onclick="setTestParam('process', 'Exchange')" id="param-process-Exchange" class="test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer">Meter Exchange</button>
+                                <button type="button" onclick="setTestParam('process', 'Disconnect')" id="param-process-Disconnect" class="test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Remote Disconn.</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generated Test Suite Table -->
+                    <div id="generated-tests-container" class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- SCENARIO C WORKBENCH: S/4HANA Utilities Blueprint & Fit-to-Standard Copilot -->
+                <div id="workbench-blueprint" class="ai-workbench hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+                        <div>
+                            <span class="font-mono text-xs font-semibold text-agentic">SAP ACTIVATE + CLAUDE / OPENAI FUNCTIONAL COPILOT</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Greenfield S/4HANA Private Cloud Blueprint Accelerator</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="selectBlueprintModule('dm')" id="bp-btn-dm" class="bp-btn px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer">Device Lifecycle (IS-U DM)</button>
+                            <button onclick="selectBlueprintModule('mdus')" id="bp-btn-mdus" class="bp-btn px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-white border border-slate-300 text-slate-700 cursor-pointer">MDMS / MDUS Sync</button>
+                            <button onclick="selectBlueprintModule('cutover')" id="bp-btn-cutover" class="bp-btn px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-white border border-slate-300 text-slate-700 cursor-pointer">20k-Scale Cutover</button>
+                        </div>
+                    </div>
+
+                    <div id="blueprint-output-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. INTERACTIVE S/4HANA & AMI INTEGRATION ARCHITECTURE DIAGRAM -->
+    <section id="architecture" class="py-16 sm:py-20 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-2 max-w-3xl mb-10">
+                <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-telemetry">
+                    <span class="w-2 h-2 rounded-full bg-telemetry"></span>
+                    END-TO-END ENTERPRISE TOPOLOGY
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                    Interactive S/4HANA &amp; AMI Integration Architecture
+                </h2>
+                <p class="text-sm sm:text-base text-slate-600">
+                    Click any architectural layer below to inspect Biman’s hands-on functional design, integration protocols, and delivery deliverables.
+                </p>
+            </div>
+
+            <!-- Horizontal 4-Node Interactive Stack -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch mb-6">
+                <button onclick="selectArchNode(0)" id="arch-node-0" class="arch-node text-left p-5 rounded-2xl border-2 border-cobalt bg-white shadow-sm transition-all cursor-pointer flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-telemetry border border-emerald-200">LAYER 01 // FIELD</span>
+                        <i data-lucide="radio" class="w-5 h-5 text-telemetry"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">Smart Meters &amp; AMI Head-End</h3>
+                        <p class="font-mono text-xs text-slate-500 mt-1">Electric, Gas, Water &bull; RTU &bull; Opt-Out</p>
+                    </div>
+                </button>
+
+                <button onclick="selectArchNode(1)" id="arch-node-1" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-blue-50 text-cobalt border border-blue-200">LAYER 02 // MIDDLEWARE</span>
+                        <i data-lucide="arrow-left-right" class="w-5 h-5 text-cobalt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">MDMS / MDUS Integration Layer</h3>
+                        <p class="font-mono text-xs text-slate-500 mt-1">Enterprise Services &bull; Interval Reads &bull; Events</p>
+                    </div>
+                </button>
+
+                <button onclick="selectArchNode(2)" id="arch-node-2" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-300">LAYER 03 // CORE ERP</span>
+                        <i data-lucide="server" class="w-5 h-5 text-slate-800"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">SAP S/4HANA Private Cloud</h3>
+                        <p class="font-mono text-xs text-slate-500 mt-1">IS-U Device Mgmt &bull; Billing &amp; CR&amp;B</p>
+                    </div>
+                </button>
+
+                <button onclick="selectArchNode(3)" id="arch-node-3" class="arch-node text-left p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-2xs transition-all cursor-pointer flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-amber-50 text-agentic border border-amber-200">LAYER 04 // INTELLIGENCE</span>
+                        <i data-lucide="cpu" class="w-5 h-5 text-agentic"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">SAP Business AI &amp; Joule Agents</h3>
+                        <p class="font-mono text-xs text-slate-500 mt-1">Joule Studio &bull; Claude &bull; OpenAI API</p>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Selected Architecture Node Detail Panel -->
+            <div id="arch-detail-panel" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. VERIFIED CREDENTIALS, CAREER TIMELINE & EDUCATION MATRIX -->
+    <section id="credentials" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- Part A: Filterable Certifications Grid (All 11 Credentials) -->
+            <div>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cobalt mb-2">
+                            <span class="w-2 h-2 rounded-full bg-cobalt"></span>
+                            VERIFIED CERTIFICATIONS (11)
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+                            SAP Global Certifications &amp; AI Credentials
+                        </h2>
+                    </div>
+
+                    <div class="inline-flex flex-wrap gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+                        <button onclick="filterCerts('all')" id="cert-filter-all" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer">ALL (11)</button>
+                        <button onclick="filterCerts('ai')" id="cert-filter-ai" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white cursor-pointer">AGENTIC AI &amp; JOULE (6)</button>
+                        <button onclick="filterCerts('sap')" id="cert-filter-sap" class="cert-filter px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-slate-600 hover:bg-white cursor-pointer">S/4HANA &amp; UTILITIES (5)</button>
+                    </div>
+                </div>
+
+                <div id="certifications-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Part B: Career Leadership Timeline & Education -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pt-6 border-t border-slate-200">
+                <!-- Experience Timeline (8 cols) -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div>
+                        <p class="font-mono text-xs font-semibold uppercase tracking-wider text-cobalt">LEADERSHIP TRAJECTORY</p>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mt-1">Professional Experience</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Role 1 -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
+                            <div class="flex flex-wrap items-start justify-between gap-2">
+                                <div>
+                                    <h4 class="font-bold text-lg text-slate-900">Functional Architect (Consulting Manager)</h4>
+                                    <p class="text-sm font-semibold text-cobalt">Cognizant &bull; Kolkata, India</p>
+                                </div>
+                                <span class="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-cobalt">
+                                    Dec 2022 – Present
+                                </span>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-700 list-disc pl-5 marker:text-cobalt">
+                                <li>Serve as Utilities SME for SAP IS-U Device Management and AMI across multiple global client engagements.</li>
+                                <li><strong>Cognizant Certified AI Coach:</strong> Managing and enabling a cohort of 200 associates in GenAI and Agentic AI.</li>
+                                <li><strong>Salt River Project (SRP), Arizona, USA:</strong> SAP AMI / IS-U DM SME &amp; Offshore Lead on a greenfield S/4HANA Private Cloud transformation (1.1M electric customers).</li>
+                                <li><strong>LG&amp;E and KU Energy, Kentucky, USA:</strong> Lead AMI Mass Deployment (~1.3M electric &amp; gas customers across KY &amp; VA), directing offshore delivery across meter exchange, RTU, opt-out, and customer communication workstreams.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
+                            <div class="flex flex-wrap items-start justify-between gap-2">
+                                <div>
+                                    <h4 class="font-bold text-lg text-slate-900">Lead Consultant, IS-U DM / AMI</h4>
+                                    <p class="text-sm font-semibold text-telemetry">Utegration, a Cognizant Co. &bull; Bengaluru, India</p>
+                                </div>
+                                <span class="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800">
+                                    Apr 2017 – Dec 2022
+                                </span>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-700 list-disc pl-5 marker:text-telemetry">
+                                <li>Delivered 6 end-to-end AMI/CR&amp;B implementations: Hawaiian Electric (HECO), Puget Sound Energy (PSE), EPCOR, Tacoma Public Utilities, Aqualectra Curaçao, and Nebraska Public Power District (NPPD).</li>
+                                <li>Led offshore testing teams of up to 7 through blueprint, SIT, and UAT; built test case libraries and managed defect resolution across gas and electric AMI programs.</li>
+                                <li>Directed ~7,600 unique market-transaction test cases for EPCOR and performance-tested AMI meter creation at 20,000-meter scale for PSE, achieving zero post-go-live defects on owned objects.</li>
+                                <li>Managed AMI Prepay integration testing and cutover/hypercare support across projects in the US and Caribbean.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Role 3 -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
+                            <div class="flex flex-wrap items-start justify-between gap-2">
+                                <div>
+                                    <h4 class="font-bold text-lg text-slate-900">SAP IS-U DM Lead / Consultant</h4>
+                                    <p class="text-sm font-semibold text-slate-700">Cognizant Technology Solutions &bull; Chennai, India</p>
+                                </div>
+                                <span class="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-slate-200 text-slate-800">
+                                    Jan 2014 – Apr 2017
+                                </span>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-700 list-disc pl-5 marker:text-slate-500">
+                                <li><strong>Centrica (British Gas), United Kingdom:</strong> Led a 6-member offshore team delivering production support and service improvements for Centrica's Beacon program (15M+ UK residential gas &amp; electric accounts).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Direct Contact Card (4 cols) -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div>
+                        <p class="font-mono text-xs font-semibold uppercase tracking-wider text-agentic">ACADEMIC FOUNDATION</p>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mt-1">Education</h3>
+                    </div>
+
+                    <div class="space-y-3.5">
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                            <span class="font-mono text-[11px] font-bold text-cobalt uppercase">POSTGRADUATE</span>
+                            <h4 class="font-bold text-slate-900 text-base mt-1">Master of Computer Application (MCA)</h4>
+                            <p class="text-xs text-slate-600 mt-1">West Bengal University of Technology, Kolkata</p>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                            <span class="font-mono text-[11px] font-bold text-slate-500 uppercase">UNDERGRADUATE</span>
+                            <h4 class="font-bold text-slate-900 text-base mt-1">Bachelor of Computer Application (BCA)</h4>
+                            <p class="text-xs text-slate-600 mt-1">West Bengal University of Technology, Kolkata</p>
+                        </div>
+                    </div>
+
+                    <!-- Executive Contact Card -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-6 space-y-4 shadow-sm">
+                        <p class="font-mono text-[11px] uppercase tracking-wider text-amber-400">DIRECT EXECUTIVE CONTACT</p>
+                        <h4 class="text-lg font-bold leading-snug">Ready to lead your next S/4HANA Utilities or Agentic AI initiative.</h4>
+                        <div class="space-y-2.5 text-xs font-mono text-slate-300 pt-1">
+                            <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg">
+                                <span>biman7777@gmail.com</span>
+                                <button onclick="copyEmailAddress()" class="text-amber-400 hover:text-amber-300 font-semibold cursor-pointer">COPY</button>
+                            </div>
+                            <div class="flex items-center justify-between bg-slate-800/80 px-3 py-2 rounded-lg">
+                                <span>+91-9940422506</span>
+                                <a href="tel:+919940422506" class="text-blue-400 hover:text-blue-300 font-semibold">CALL</a>
+                            </div>
+                            <a href="https://www.linkedin.com/in/bimanghsh" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between bg-slate-800/80 hover:bg-slate-800 px-3 py-2 rounded-lg transition-colors">
+                                <span>linkedin.com/in/bimanghsh</span>
+                                <span class="text-emerald-400 font-semibold">OPEN &rarr;</span>
+                            </a>
+                        </div>
+                        <button onclick="openResumeModal()" class="w-full py-2.5 rounded-xl bg-cobalt hover:bg-blue-600 text-white font-sans font-semibold text-xs transition-colors cursor-pointer">
+                            Open Print-Ready CV
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="py-8 bg-canvas">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="font-mono">
+                &copy; 2026 BIMAN GHOSH // SAP FUNCTIONAL ARCHITECT &amp; AGENTIC AI SME
+            </div>
+            <div class="flex items-center gap-5 font-medium">
+                <a href="#explorer" class="hover:text-slate-900">Global Explorer</a>
+                <a href="#ai-playground" class="hover:text-slate-900">AI Playground</a>
+                <a href="#architecture" class="hover:text-slate-900">Architecture</a>
+                <button onclick="openResumeModal()" class="hover:text-cobalt cursor-pointer">Printable CV</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRINTABLE RESUME MODAL -->
+    <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/75 backdrop-blur-xs p-4" onclick="closeModalOnBackdrop(event, 'resume-modal')">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-4xl w-full shadow-2xl flex flex-col max-h-[92vh]">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between gap-4 shrink-0 bg-slate-50 rounded-t-2xl">
+                <div class="flex items-center gap-2.5">
+                    <i data-lucide="file-text" class="w-5 h-5 text-cobalt"></i>
+                    <span class="font-bold text-slate-900 text-sm sm:text-base">Curriculum Vitae — Biman Ghosh</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="window.print()" class="px-4 py-2 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                        <span>Print / Save PDF</span>
+                    </button>
+                    <button onclick="closeModal('resume-modal')" class="p-2 rounded-lg bg-white border border-slate-300 text-slate-600 hover:text-slate-900 cursor-pointer">
+                        <i data-lucide="x" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Printable CV Body -->
+            <div class="p-6 sm:p-10 overflow-y-auto bg-slate-100">
+                <div id="printable-resume-area" class="bg-white text-slate-900 border border-slate-200 rounded-xl p-8 sm:p-10 max-w-3xl mx-auto shadow-sm space-y-5 font-sans">
+                    <div class="border-b-2 border-slate-900 pb-4">
+                        <h1 class="text-2xl font-extrabold tracking-tight text-slate-950">BIMAN GHOSH</h1>
+                        <p class="text-sm font-bold text-cobalt mt-0.5">SAP Functional Architect | IS-U Device Management &amp; AMI SME | S/4HANA | Agentic AI in SAP</p>
+                        <p class="text-xs text-slate-600 mt-1">Kolkata, West Bengal, India &bull; +91-9940422506 &bull; biman7777@gmail.com &bull; linkedin.com/in/bimanghsh</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Summary</h2>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            SAP Functional Architect with 13 years and 8 full-lifecycle implementations delivering SAP IS-U Device Management and Advanced Metering Infrastructure (AMI) transformations for electric, gas, and water utilities across the US, Canada, the Caribbean, and the UK collectively serving well over 6 million utility customers. Led blueprint and realization workstreams as the critical functional bridge between business stakeholders and technical teams on AMI rollouts, greenfield CR&amp;B implementations, and large-scale production support programs. Currently leading a greenfield S/4HANA Private Cloud transformation. SAP Certified Generative AI Developer applying GenAI to modernize SAP delivery.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Core Competencies</h2>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            SAP IS-U Device Management &bull; SAP AMI / Smart Metering &bull; S/4HANA Cloud Private Edition &bull; MDMS/MDUS Integration &bull; Blueprinting &amp; Realization &bull; SIT/UAT Test Leadership &bull; Cutover &amp; Hypercare &bull; GenAI for SAP (OpenAI API, Anthropic Claude) &bull; Offshore Team Leadership &bull; SAP Joule Studio &bull; Lean Six Sigma
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Certifications</h2>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            SAP Certified - Joule Studio Developer &bull; SAP Certified - Solution Architect - SAP Business AI Platform &bull; SAP Certified - S/4HANA Cloud Private Edition Implementation Consultant &bull; SAP Certified - Generative AI Developer &bull; SAP Certified - SAP Enterprise Architect &bull; SAP Certified - Project Manager - SAP Activate for Agile Implementation Management &bull; SAP Certified Associate - Utilities with SAP ERP 6.0 &bull; SAP Certified - Positioning the Autonomous Enterprise &bull; Codex Technical Practitioner &bull; Codex Solutions Practitioner &bull; Six Sigma Yellow Belt
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Experience</h2>
+                        <div class="space-y-3 text-xs text-slate-700">
+                            <div>
+                                <div class="flex justify-between font-bold text-slate-900">
+                                    <span>Cognizant — Functional Architect (Consulting Manager)</span>
+                                    <span>Dec 2022 – Present | Kolkata, India</span>
+                                </div>
+                                <ul class="list-disc pl-4 mt-1 space-y-1">
+                                    <li>Serve as Utilities SME for SAP IS-U Device Management and AMI across multiple client engagements.</li>
+                                    <li>Cognizant Certified AI Coach — Managing a cohort of 200 associates (GenAI and Agentic AI coaching and enablement).</li>
+                                    <li><strong>Salt River Project (SRP), Arizona, USA — S/4HANA Private Cloud Transformation | 1.1M electric customers:</strong> SAP AMI/IS-U DM SME &amp; Offshore Lead on a greenfield S/4HANA Private Cloud transformation.</li>
+                                    <li><strong>LG&amp;E and KU Energy, Kentucky, USA — AMI Mass Deployment | ~1.3M electric &amp; gas customers across KY and VA:</strong> Lead AMI Mass Deployment, directing offshore delivery across meter exchange, RTU, opt-out, and customer communication workstreams.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between font-bold text-slate-900">
+                                    <span>Utegration, a Cognizant Co. — Lead Consultant, IS-U DM/AMI</span>
+                                    <span>Apr 2017 – Dec 2022 | Bengaluru, India</span>
+                                </div>
+                                <ul class="list-disc pl-4 mt-1 space-y-1">
+                                    <li>Delivered 6 end-to-end AMI/CR&amp;B implementations: <strong>Hawaiian Electric (HECO)</strong> (~460K electric customers across Oahu, Maui &amp; Hawaii Island), <strong>Puget Sound Energy (PSE)</strong> (3 releases, ~1.2M electric / ~900K gas customers), <strong>EPCOR</strong> (Greenfield CR&amp;B, 1M+ water &amp; electricity residents), <strong>Tacoma Public Utilities</strong> (AMI Prepay Integration, 180K electric customers), <strong>Aqualectra Curaçao</strong> (AMI Blueprint &amp; Realization, ~80K households), and <strong>Nebraska Public Power District (NPPD)</strong> (AMI System Integration, ~1M residents).</li>
+                                    <li>Led offshore testing teams of up to 7 through blueprint, SIT, and UAT; built test case libraries and managed defect resolution across gas and electric AMI programs.</li>
+                                    <li>Directed ~7,600 unique market-transaction test cases for EPCOR and performance-tested AMI meter creation at 20,000-meter scale for PSE, achieving zero post-go-live defects on owned objects.</li>
+                                    <li>Managed AMI Prepay integration testing and cutover/hypercare support across projects in the US and Caribbean.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between font-bold text-slate-900">
+                                    <span>Cognizant Technology Solutions — SAP IS-U DM Lead / Consultant</span>
+                                    <span>Jan 2014 – Apr 2017 | Chennai, India</span>
+                                </div>
+                                <ul class="list-disc pl-4 mt-1 space-y-1">
+                                    <li><strong>Centrica (British Gas), United Kingdom — Production Support | 15M+ UK residential gas &amp; electric accounts:</strong> Led a 6-member offshore team delivering production support and service improvements for Centrica's Beacon program.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-1">Education</h2>
+                        <p class="text-xs text-slate-700">
+                            <strong>Master of Computer Application (MCA)</strong> &amp; <strong>Bachelor of Computer Application (BCA)</strong> — West Bengal University of Technology, Kolkata
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST FEEDBACK -->
+    <div id="toast-banner" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 text-white text-xs font-mono shadow-xl border border-slate-700">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span id="toast-msg">Copied to clipboard</span>
+    </div>
+
+    <script>
+        // =========================================================================
+        // 1. GLOBAL UTILITY PROGRAMS DATA (ALL 9 REAL PROGRAMS FROM RESUME)
+        // =========================================================================
+        const utilityPrograms = [
+            {
+                id: 'srp',
+                shortName: 'Salt River Project',
+                name: 'Salt River Project (SRP)',
+                region: 'Arizona, USA',
+                category: 's4-ami',
+                typeBadge: 'S/4HANA Private Cloud Greenfield',
+                scale: '1.1M Electric Customers (Existing AMI Base)',
+                role: 'SAP AMI / IS-U DM SME & Offshore Lead',
+                period: 'Current Engagement (Cognizant)',
+                coords: { x: 235, y: 222 },
+                techScope: ['S/4HANA Cloud Private Edition', 'SAP IS-U Device Management', 'AMI Integration', 'Offshore Delivery Leadership'],
+                summary: 'Serving as SAP AMI and IS-U Device Management SME and Offshore Lead on a greenfield S/4HANA Private Cloud transformation for Salt River Project in Arizona.',
+                outcome: 'Architecting modern IS-U Device Management and AMI integration processes on S/4HANA Private Cloud while bridging business stakeholders and offshore engineering teams across a 1.1M customer base.'
+            },
+            {
+                id: 'lge',
+                shortName: 'LG&E & KU Energy',
+                name: 'LG&E and KU Energy',
+                region: 'Kentucky & Virginia, USA',
+                category: 's4-ami',
+                typeBadge: 'AMI Mass Deployment',
+                scale: '~1.3M Electric & Gas Customers',
+                role: 'Offshore Delivery Lead — AMI Mass Deployment',
+                period: 'Cognizant Engagement',
+                coords: { x: 402, y: 196 },
+                techScope: ['AMI Mass Deployment', 'Meter Exchange & RTU', 'Customer Opt-Out Workflows', 'Customer Communications'],
+                summary: 'Leading AMI Mass Deployment for LG&E and KU Energy across Kentucky and Virginia service territories.',
+                outcome: 'Directed offshore functional delivery across high-volume meter exchange, RTU, customer opt-out, and automated customer communication workstreams serving ~1.3M electric and gas accounts.'
+            },
+            {
+                id: 'pse',
+                shortName: 'Puget Sound Energy',
+                name: 'Puget Sound Energy (PSE)',
+                region: 'Seattle, Washington, USA',
+                category: 's4-ami',
+                typeBadge: 'AMI Implementation (3 Releases)',
+                scale: '~1.2M Electric / ~900K Gas Customers',
+                role: 'Lead Consultant, IS-U DM / AMI',
+                period: 'Utegration (Blueprint through UAT)',
+                coords: { x: 202, y: 156 },
+                techScope: ['3 Full AMI Releases', '20,000-Meter Scale Performance Test', 'Electric & Gas AMI', 'SIT & UAT Leadership'],
+                summary: 'Delivered 3 consecutive AMI implementation releases from blueprint through UAT for dual-fuel electric and natural gas customers in Seattle.',
+                outcome: 'Performance-tested AMI meter creation at a 20,000-meter scale and achieved zero post-go-live defects on owned functional objects.'
+            },
+            {
+                id: 'epcor',
+                shortName: 'EPCOR',
+                name: 'EPCOR Utilities',
+                region: 'Edmonton, Alberta, Canada',
+                category: 'crb-support',
+                typeBadge: 'Greenfield CR&B (Non-AMI)',
+                scale: '1M+ Residents (Water & Electricity)',
+                role: 'Lead Consultant — IS-U DM & Test Leadership',
+                period: 'Utegration Engagement',
+                coords: { x: 264, y: 116 },
+                techScope: ['Greenfield CR&B', '~7,600 Market-Transaction Test Cases', 'Water & Electricity Billing', 'SIT / UAT Defect Management'],
+                summary: 'Delivered a greenfield Customer Relationship & Billing (CR&B) implementation for water and electricity distribution in Edmonton, Canada.',
+                outcome: 'Directed ~7,600 unique market-transaction test cases across SIT and UAT cycles, ensuring regulatory market compliance for over 1 million residents.'
+            },
+            {
+                id: 'heco',
+                shortName: 'Hawaiian Electric',
+                name: 'Hawaiian Electric (HECO)',
+                region: 'Oahu, Maui & Hawaii Island, USA',
+                category: 's4-ami',
+                typeBadge: 'AMI Implementation — MDUS',
+                scale: '~460K Electric Customers',
+                role: 'Lead Consultant, IS-U DM / AMI',
+                period: 'Utegration Engagement',
+                coords: { x: 114, y: 326 },
+                techScope: ['MDUS Integration', 'SAP IS-U Device Management', 'Multi-Island AMI Rollout', 'Cutover & Hypercare'],
+                summary: 'Implemented SAP IS-U AMI and Meter Data Unification & Synchronization (MDUS) across Oahu, Maui, and Hawaii Island.',
+                outcome: 'Delivered bi-directional MDUS enterprise service integration and cutover/hypercare support across ~460K island electric customers.'
+            },
+            {
+                id: 'tacoma',
+                shortName: 'Tacoma Public Utilities',
+                name: 'Tacoma Public Utilities',
+                region: 'Tacoma, Washington, USA',
+                category: 's4-ami',
+                typeBadge: 'AMI — Prepay Integration',
+                scale: '180K Electric Customers',
+                role: 'Lead Consultant — AMI & Prepay Integration',
+                period: 'Utegration Engagement',
+                coords: { x: 200, y: 171 },
+                techScope: ['AMI Prepay Integration', 'Remote Connect / Disconnect', 'SIT/UAT Integration Testing', 'Cutover & Hypercare'],
+                summary: 'Delivered AMI Prepay integration connecting SAP IS-U Device Management with real-time prepay metering and remote service orders.',
+                outcome: 'Managed end-to-end AMI Prepay integration testing, cutover execution, and hypercare stabilization for 180K electric accounts.'
+            },
+            {
+                id: 'nppd',
+                shortName: 'NPPD',
+                name: 'Nebraska Public Power District (NPPD)',
+                region: 'Nebraska, USA',
+                category: 's4-ami',
+                typeBadge: 'AMI — System Integration',
+                scale: '~1M Residents Served',
+                role: 'Lead Consultant, IS-U DM / AMI',
+                period: 'Utegration Engagement',
+                coords: { x: 318, y: 184 },
+                techScope: ['AMI System Integration', 'IS-U Device Lifecycle', 'Test Case Library Governance', 'Offshore Team Leadership'],
+                summary: 'Executed end-to-end AMI system integration across SAP IS-U Device Management and utility enterprise applications.',
+                outcome: 'Led offshore functional analysts through SIT and UAT cycles, delivering standardized AMI integration workflows across Nebraska.'
+            },
+            {
+                id: 'aqualectra',
+                shortName: 'Aqualectra',
+                name: 'Aqualectra Utility',
+                region: 'Curaçao, Caribbean',
+                category: 's4-ami',
+                typeBadge: 'AMI Blueprint & Realization',
+                scale: '~80K Households Island-Wide',
+                role: 'Lead Consultant, IS-U DM / AMI',
+                period: 'Utegration Engagement',
+                coords: { x: 478, y: 354 },
+                techScope: ['Blueprint & Realization', 'Island-Wide Smart Metering', 'IS-U Device Management', 'Cutover & Hypercare'],
+                summary: 'Led blueprint and realization workstreams for an island-wide utility AMI transformation covering ~80,000 households in Curaçao.',
+                outcome: 'Translated utility field and metering requirements into configured SAP IS-U DM / AMI processes from blueprint through hypercare.'
+            },
+            {
+                id: 'centrica',
+                shortName: 'Centrica (British Gas)',
+                name: 'Centrica (British Gas)',
+                region: 'United Kingdom',
+                category: 'crb-support',
+                typeBadge: 'Production Support (Beacon)',
+                scale: '15M+ UK Residential Gas & Electric Accounts',
+                role: 'SAP IS-U DM Team Lead',
+                period: 'Cognizant (2014 – 2017)',
+                coords: { x: 648, y: 136 },
+                techScope: ['Beacon Program Operations', 'Conventional Metering Support', 'Service Improvements', '6-Member Offshore Team Lead'],
+                summary: 'Led a 6-member offshore team delivering mission-critical SAP IS-U Device Management production support for Centrica’s Beacon program.',
+                outcome: 'Sustained SLA excellence and continuous service improvements across 15M+ UK residential gas and electricity customer accounts.'
+            }
+        ];
+
+        let activeProgramId = 'srp';
+        let activeExplorerFilter = 'all';
+
+        function renderExplorer() {
+            const filtered = activeExplorerFilter === 'all'
+                ? utilityPrograms
+                : utilityPrograms.filter(p => p.category === activeExplorerFilter);
+
+            // Render SVG Pins
+            const pinsLayer = document.getElementById('svg-pins-layer');
+            pinsLayer.innerHTML = filtered.map(prog => {
+                const isSelected = prog.id === activeProgramId;
+                const pinColor = prog.category === 's4-ami' ? '#1D4ED8' : '#059669';
+                const ringColor = isSelected ? '#D97706' : pinColor;
+                const coreColor = isSelected ? '#D97706' : pinColor;
+
+                return `
+                    <g onclick="selectUtilityProgram('${prog.id}')" class="cursor-pointer group" role="button" tabindex="0" aria-label="${prog.name}">
+                        <circle cx="${prog.coords.x}" cy="${prog.coords.y}" r="${isSelected ? 11 : 8}" fill="${ringColor}" class="map-pin-ring"/>
+                        <circle cx="${prog.coords.x}" cy="${prog.coords.y}" r="${isSelected ? 7.5 : 5.5}" fill="${coreColor}" stroke="#FFFFFF" stroke-width="2"/>
+                        <g transform="translate(${prog.coords.x + 10}, ${prog.coords.y - 9})">
+                            <rect x="0" y="0" width="${prog.shortName.length * 6.3 + 12}" height="18" rx="4" fill="${isSelected ? '#0F172A' : '#FFFFFF'}" stroke="${isSelected ? '#0F172A' : '#CBD5E1'}" stroke-width="1"/>
+                            <text x="6" y="12.5" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600" fill="${isSelected ? '#FFFFFF' : '#0F172A'}">${prog.shortName}</text>
+                        </g>
+                    </g>
+                `;
+            }).join('');
+
+            // Render Pills Strip
+            const pillsContainer = document.getElementById('utility-pills-container');
+            pillsContainer.innerHTML = filtered.map(prog => {
+                const isSelected = prog.id === activeProgramId;
+                return `
+                    <button onclick="selectUtilityProgram('${prog.id}')" class="px-3 py-1.5 rounded-lg font-mono text-xs font-medium transition-all cursor-pointer ${
+                        isSelected
+                            ? 'bg-cobalt text-white shadow-2xs'
+                            : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                    }">
+                        ${prog.shortName}
+                    </button>
+                `;
+            }).join('');
+
+            // Render Right Dossier Card
+            const selected = utilityPrograms.find(p => p.id === activeProgramId) || filtered[0];
+            const dossierCard = document.getElementById('utility-dossier-card');
+            const badgeStyle = selected.category === 's4-ami'
+                ? 'bg-blue-50 text-cobalt border-blue-200'
+                : 'bg-emerald-50 text-telemetry border-emerald-200';
+
+            dossierCard.innerHTML = `
+                <div class="space-y-5">
+                    <div class="flex items-start justify-between gap-3 border-b border-slate-100 pb-4">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded-md border font-mono text-[11px] font-semibold ${badgeStyle}">
+                                ${selected.typeBadge}
+                            </span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">${selected.name}</h3>
+                            <p class="font-mono text-xs text-slate-500 mt-0.5 flex items-center gap-1.5">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cobalt"></i>
+                                <span>${selected.region}</span>
+                            </p>
+                        </div>
+                        <span class="font-mono text-xs font-bold text-slate-400">
+                            0${utilityPrograms.findIndex(p => p.id === selected.id) + 1}/09
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                            <p class="font-mono text-[10px] uppercase tracking-wider text-slate-500">CUSTOMER &amp; METER SCALE</p>
+                            <p class="font-bold text-sm text-slate-900 mt-1">${selected.scale}</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                            <p class="font-mono text-[10px] uppercase tracking-wider text-slate-500">LEADERSHIP ROLE</p>
+                            <p class="font-bold text-sm text-cobalt mt-1">${selected.role}</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400">ARCHITECTURAL &amp; FUNCTIONAL SCOPE</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">${selected.summary}</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200/80 space-y-1.5">
+                        <p class="font-mono text-[11px] font-bold uppercase tracking-wider text-telemetry flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                            <span>KEY DELIVERY OUTCOME</span>
+                        </p>
+                        <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">${selected.outcome}</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100">
+                    <p class="font-mono text-[10px] uppercase tracking-wider text-slate-400 mb-2">TECHNICAL &amp; FUNCTIONAL STACK</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        ${selected.techScope.map(tag => `
+                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-mono text-[11px] font-medium">${tag}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            lucide.createIcons();
+        }
+
+        function selectUtilityProgram(id) {
+            activeProgramId = id;
+            renderExplorer();
+        }
+
+        function filterExplorer(category) {
+            activeExplorerFilter = category;
+            document.querySelectorAll('.exp-filter').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white');
+                btn.classList.add('text-slate-600');
+            });
+            const activeBtn = document.getElementById(`exp-filter-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-slate-900', 'text-white');
+                activeBtn.classList.remove('text-slate-600');
+            }
+            const filtered = category === 'all' ? utilityPrograms : utilityPrograms.filter(p => p.category === category);
+            if (!filtered.some(p => p.id === activeProgramId) && filtered.length > 0) {
+                activeProgramId = filtered[0].id;
+            }
+            renderExplorer();
+        }
+
+        // =========================================================================
+        // 2. INTERACTIVE AGENTIC AI + SAP IS-U PLAYGROUND
+        // =========================================================================
+        const triageScenarios = {
+            'register-mismatch': {
+                steps: [
+                    {
+                        step: 'STEP 01 // INGEST',
+                        title: 'MDUS & IS-U DM Context Capture',
+                        code: 'T-Code EG42 | Device: 88492014 | MDUS_IDOC_ERR 409',
+                        detail: 'Ingests failed meter exchange payload from AMI Head-End and inspects SAP IS-U Device Category & Register Group assignment.'
+                    },
+                    {
+                        step: 'STEP 02 // DIAGNOSE',
+                        title: 'Joule Root-Cause Reasoning',
+                        code: 'Mismatch: Logical Register 03 (kWh Delivered) vs. 2-Channel AMI Profile',
+                        detail: 'Identifies that field technician installed a bi-directional solar/net-metering AMI endpoint against a legacy single-register rate category.'
+                    },
+                    {
+                        step: 'STEP 03 // RESOLVE',
+                        title: 'Automated Remediation & BAPI Payload',
+                        code: 'BAPI_UTILINSTALLATION_CHANFACT + MDUS Re-Sync Trigger',
+                        detail: 'Drafts the corrected Register Group mapping, queues automated IS-U device modification, and prepares re-trigger of MDUS Master Data Sync.'
+                    },
+                    {
+                        step: 'STEP 04 // VERIFY',
+                        title: 'Regression & Billing Lock Check',
+                        code: 'EL31 Billing Order Unblocked | Audit Log Archived',
+                        detail: 'Validates next scheduled meter reading order creation and appends regression assertion to the SAP Activate test repository.'
+                    }
+                ],
+                manualTime: '42 mins / exception',
+                agenticTime: '18 seconds (99.2% faster)',
+                summary: 'Eliminates manual cross-checking between MDUS XML logs and SAP IS-U EG42 device master tables.'
+            },
+            'interval-gap': {
+                steps: [
+                    {
+                        step: 'STEP 01 // INGEST',
+                        title: 'Billing Order Hold Detection',
+                        code: 'T-Code EL31 | Billing Order #904112 | Missing 72h LP Reads',
+                        detail: 'Detects implausible/missing 15-minute interval load profile reads blocking automated monthly CR&B billing run.'
+                    },
+                    {
+                        step: 'STEP 02 // DIAGNOSE',
+                        title: 'MDMS Backfill vs. Outage Correlation',
+                        code: 'Head-End Ping: OK | MDMS VEE Status: Pending Backfill',
+                        detail: 'Cross-references AMI collector outage events and confirms meter recovered communication; interval reads are staged in MDMS awaiting on-demand read request.'
+                    },
+                    {
+                        step: 'STEP 03 // RESOLVE',
+                        title: 'On-Demand Read (ODR) Orchestration',
+                        code: 'SOA Service: SmartMeterUtilitiesMeasurementTaskERPCreateRequest',
+                        detail: 'Dispatches targeted SAP-to-MDUS On-Demand Read request for the exact 72-hour window and applies VEE validation rules.'
+                    },
+                    {
+                        step: 'STEP 04 // VERIFY',
+                        title: 'Automated Meter Read Release',
+                        code: 'EL28 Plausibility Passed | Ready for EASIBI Invoicing',
+                        detail: 'Confirms interval read completion in IS-U and releases billing order for overnight batch invoicing.'
+                    }
+                ],
+                manualTime: '35 mins / account',
+                agenticTime: '14 seconds (99.3% faster)',
+                summary: 'Prevents revenue leakage and delayed utility invoices during mass AMI deployment cutovers.'
+            },
+            'prepay-disconnect': {
+                steps: [
+                    {
+                        step: 'STEP 01 // INGEST',
+                        title: 'Prepay Threshold & Disconnect Alert',
+                        code: 'Prepay Balance: $0.00 | Service Order Status: TIMEOUT',
+                        detail: 'Captures timed-out remote disconnect command between SAP IS-U Device Management, MDMS, and Prepay Portal.'
+                    },
+                    {
+                        step: 'STEP 02 // DIAGNOSE',
+                        title: 'Rule & Moratorium Guardrail Check',
+                        code: 'Weather Moratorium: CLEAR | Mesh Hop Latency: 48s',
+                        detail: 'Verifies regulatory disconnect eligibility (temperature/medical flags clear) and isolates transient RF mesh latency on collector node.'
+                    },
+                    {
+                        step: 'STEP 03 // RESOLVE',
+                        title: 'Idempotent Retry & Customer Alert',
+                        code: 'UtilitiesDeviceSmartMeterConnectionStatusChangeRequest',
+                        detail: 'Executes idempotent retry with exponential backoff and triggers real-time SMS/app notification via customer communication interface.'
+                    },
+                    {
+                        step: 'STEP 04 // VERIFY',
+                        title: 'Switch State Confirmation',
+                        code: 'IS-U Device Status: DISCONNECTED_REMOTE | Sync Verified',
+                        detail: 'Reconciles physical relay switch state in SAP IS-U Device Management with Prepay ledger.'
+                    }
+                ],
+                manualTime: '28 mins / ticket',
+                agenticTime: '11 seconds (99.3% faster)',
+                summary: 'Built on hands-on AMI Prepay integration experience from Tacoma Public Utilities.'
+            }
+        };
+
+        let isTriageRunning = false;
+
+        function renderTriageInitial() {
+            const key = document.getElementById('triage-exception-select').value;
+            const data = triageScenarios[key];
+            const grid = document.getElementById('triage-steps-grid');
+
+            grid.innerHTML = data.steps.map((s, idx) => `
+                <div id="triage-card-${idx}" class="bg-white border border-slate-200 rounded-xl p-4 space-y-2 transition-all duration-300">
+                    <div class="flex items-center justify-between">
+                        <span class="font-mono text-[10px] font-bold text-slate-400" id="triage-badge-${idx}">${s.step}</span>
+                        <span id="triage-dot-${idx}" class="w-2 h-2 rounded-full bg-slate-300"></span>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900">${s.title}</h4>
+                    <p class="font-mono text-[11px] text-cobalt bg-blue-50/70 px-2 py-1 rounded border border-blue-100 break-words">${s.code}</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">${s.detail}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('triage-outcome-banner').innerHTML = `
+                <div class="space-y-1">
+                    <p class="font-mono text-[11px] font-bold uppercase text-slate-500">TELEMETRY BENCHMARK // READY TO SIMULATE</p>
+                    <p class="text-sm text-slate-700">${data.summary}</p>
+                </div>
+                <div class="flex items-center gap-4 shrink-0 font-mono text-xs">
+                    <div class="px-3 py-2 rounded-lg bg-slate-100 text-slate-600">
+                        Manual: <strong class="text-slate-900">${data.manualTime}</strong>
+                    </div>
+                    <div class="px-3 py-2 rounded-lg bg-emerald-50 border border-emerald-200 text-telemetry">
+                        Joule Agent: <strong>${data.agenticTime}</strong>
+                    </div>
+                </div>
+            `;
+        }
+
+        function runTriageAgent() {
+            if (isTriageRunning) return;
+            isTriageRunning = true;
+            renderTriageInitial();
+
+            const btn = document.getElementById('run-triage-btn');
+            btn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i><span>Executing Agent...</span>`;
+            lucide.createIcons();
+
+            [0, 1, 2, 3].forEach((idx) => {
+                setTimeout(() => {
+                    const card = document.getElementById(`triage-card-${idx}`);
+                    const dot = document.getElementById(`triage-dot-${idx}`);
+                    const badge = document.getElementById(`triage-badge-${idx}`);
+                    if (card && dot && badge) {
+                        card.classList.remove('border-slate-200');
+                        card.classList.add('border-telemetry', 'ring-2', 'ring-emerald-500/15');
+                        dot.classList.remove('bg-slate-300');
+                        dot.classList.add('bg-telemetry');
+                        badge.classList.remove('text-slate-400');
+                        badge.classList.add('text-telemetry');
+                    }
+                    if (idx === 3) {
+                        isTriageRunning = false;
+                        btn.innerHTML = `<i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i><span>Re-Run Workflow</span>`;
+                        lucide.createIcons();
+                        showToast('Agentic workflow completed: IS-U exception triaged & verified.');
+                    }
+                }, (idx + 1) * 380);
+            });
+        }
+
+        document.getElementById('triage-exception-select').addEventListener('change', renderTriageInitial);
+
+        // Scenario B: Automated SAP IS-U Market-Transaction Test Generator
+        const testParams = {
+            commodity: 'Electric',
+            billing: 'Postpay',
+            process: 'Exchange'
+        };
+
+        function setTestParam(key, value) {
+            testParams[key] = value;
+            ['Electric', 'Gas'].forEach(v => {
+                const el = document.getElementById(`param-commodity-${v}`);
+                el.className = v === testParams.commodity
+                    ? 'test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer'
+                    : 'test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer';
+            });
+            ['Postpay', 'Prepay'].forEach(v => {
+                const el = document.getElementById(`param-billing-${v}`);
+                el.className = v === testParams.billing
+                    ? 'test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer'
+                    : 'test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer';
+            });
+            ['Exchange', 'Disconnect'].forEach(v => {
+                const el = document.getElementById(`param-process-${v}`);
+                el.className = v === testParams.process
+                    ? 'test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer'
+                    : 'test-param-btn py-2 px-3 rounded-lg font-mono text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer';
+            });
+            generateIsUTestCases(false);
+        }
+
+        function generateIsUTestCases(notify = true) {
+            const { commodity, billing, process } = testParams;
+            const divCode = commodity === 'Electric' ? '01 (Electric)' : '02 (Gas)';
+            const isExchange = process === 'Exchange';
+            const isPrepay = billing === 'Prepay';
+
+            const cases = [
+                {
+                    id: `TC-${commodity.slice(0,2).toUpperCase()}-${billing.slice(0,3).toUpperCase()}-001`,
+                    scenario: isExchange
+                        ? `Mass AMI ${commodity} Meter Replacement & Register Group Proration (${billing})`
+                        : `Automated Remote Disconnect Trigger & Relay Confirmation (${commodity} ${billing})`,
+                    sapObj: isExchange ? 'EG42 / EL28 / MDUS_DEV_SYNC' : 'EC55E / AMI_CONN_STATUS',
+                    checkpoint: isPrepay
+                        ? 'Verify Prepay balance threshold breach -> MDUS relay open -> IS-U Device Status = Locked'
+                        : `Verify Division ${divCode} removal read proration, new AMI serial provisioning & MDUS sync ACK`
+                },
+                {
+                    id: `TC-${commodity.slice(0,2).toUpperCase()}-${billing.slice(0,3).toUpperCase()}-002`,
+                    scenario: isExchange
+                        ? `Customer Opt-Out / RTU Exception Handling During ${commodity} Field Rollout`
+                        : `Regulatory Moratorium & Medical Life-Support Override Check (${commodity})`,
+                    sapObj: 'ISU_AMI_OPTOUT / BP_EMMA_CASE',
+                    checkpoint: 'Confirm EMMA clarification case creation, opt-out fee tariff assignment & head-end suppression'
+                },
+                {
+                    id: `TC-${commodity.slice(0,2).toUpperCase()}-${billing.slice(0,3).toUpperCase()}-003`,
+                    scenario: `High-Volume Batch Concurrency Test (20,000 ${commodity} AMI Endpoints — PSE Benchmark)`,
+                    sapObj: 'BAPI_MTRREADDOC_UPLOAD / SOA_MDUS',
+                    checkpoint: 'Zero lock contention on EABL/EASTL tables; 100% IDoc/SOA message reconciliation under load'
+                }
+            ];
+
+            document.getElementById('generated-tests-container').innerHTML = `
+                <div class="px-4 py-3 bg-slate-900 text-white flex flex-wrap items-center justify-between gap-2">
+                    <span class="font-mono text-xs font-semibold">GENERATED SIT/UAT SUITE // ${commodity.toUpperCase()} &bull; ${billing.toUpperCase()} &bull; ${process.toUpperCase()}</span>
+                    <span class="font-mono text-[11px] text-emerald-400">3 Core Scenarios + Edge Matrix Ready</span>
+                </div>
+                <div class="divide-y divide-slate-200">
+                    ${cases.map(tc => `
+                        <div class="p-4 sm:p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
+                            <div class="space-y-1 max-w-2xl">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-mono text-xs font-bold text-cobalt">${tc.id}</span>
+                                    <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">${tc.sapObj}</span>
+                                </div>
+                                <p class="font-bold text-sm text-slate-900">${tc.scenario}</p>
+                                <p class="text-xs text-slate-600"><strong class="text-slate-800">IS-U / MDUS Checkpoint:</strong> ${tc.checkpoint}</p>
+                            </div>
+                            <span class="font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-telemetry self-start lg:self-center shrink-0">
+                                ASSERTION READY
+                            </span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            if (notify) {
+                showToast(`Generated SAP IS-U SIT/UAT suite for ${commodity} (${billing} - ${process}).`);
+            }
+        }
+
+        // Scenario C: S/4HANA Utilities Blueprint & Fit-to-Standard Copilot
+        const blueprintModules = {
+            dm: {
+                title: 'IS-U Device Management Fit-to-Standard (S/4HANA Private Cloud)',
+                inputs: 'Legacy ERP 6.0 device categories, meter reading units (MRUs), regional regulatory tariff rules, and AMI deployment waves.',
+                aiSynthesis: 'Claude / OpenAI prompt chains map workshop transcripts into SAP Activate Fit-to-Standard delta logs, identifying clean-core BAdI extensions vs. standard S/4HANA Private Cloud configuration.',
+                deliverables: [
+                    'End-to-End Device Lifecycle Blueprint (Procurement -> Installation -> Exchange -> Scrapping)',
+                    'Register Group & Rate Category Determination Matrix',
+                    'Clean-Core WRICEF Inventory with Functional Specifications'
+                ]
+            },
+            mdus: {
+                title: 'MDMS / MDUS Enterprise Service Integration Blueprint',
+                inputs: 'Head-End vendor schemas, MDMS VEE (Validation, Estimation, Editing) rules, and SAP SOA / AIF error-handling requirements.',
+                aiSynthesis: 'Automated schema diffing and payload mapping between SAP MDUS enterprise services and third-party MDMS platforms (Itron, Landis+Gyr, Sensus).',
+                deliverables: [
+                    'Bi-Directional MDUS Interface Control Document (ICD)',
+                    'Remote Connect/Disconnect & On-Demand Read Sequence Diagrams',
+                    'SAP AIF / EMMA Exception Routing & Auto-Retry Playbook'
+                ]
+            },
+            cutover: {
+                title: 'High-Volume Cutover & 20,000-Meter Scale Readiness Plan',
+                inputs: 'Legacy meter asset registers, open service orders, in-flight billing cycles, and hypercare SLA thresholds.',
+                aiSynthesis: 'Synthesizes mock-cutover timings and generates automated pre-cutover data reconciliation scripts across EQUI, EGERH, and EASTL tables.',
+                deliverables: [
+                    'Hour-by-Hour Cutover Runbook & Go/No-Go Checkpoints',
+                    '20,000-Meter Batch Creation Performance Benchmark Suite',
+                    'Hypercare Command Center Triage & Defect SLA Matrix'
+                ]
+            }
+        };
+
+        function selectBlueprintModule(modKey) {
+            ['dm', 'mdus', 'cutover'].forEach(k => {
+                const btn = document.getElementById(`bp-btn-${k}`);
+                btn.className = k === modKey
+                    ? 'bp-btn px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-slate-900 text-white cursor-pointer'
+                    : 'bp-btn px-3 py-1.5 rounded-lg font-mono text-xs font-semibold bg-white border border-slate-300 text-slate-700 cursor-pointer';
+            });
+
+            const data = blueprintModules[modKey];
+            document.getElementById('blueprint-output-grid').innerHTML = `
+                <div class="lg:col-span-7 bg-white border border-slate-200 rounded-xl p-6 space-y-4">
+                    <span class="font-mono text-[11px] font-bold uppercase text-agentic">COPILOT SYNTHESIS // ${modKey.toUpperCase()}</span>
+                    <h4 class="text-lg font-bold text-slate-900">${data.title}</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                            <p class="font-mono text-[10px] font-bold uppercase text-slate-500">1. STAKEHOLDER &amp; SYSTEM INPUTS</p>
+                            <p class="text-slate-700 mt-1">${data.inputs}</p>
+                        </div>
+                        <div class="p-3.5 rounded-lg bg-amber-50/70 border border-amber-200">
+                            <p class="font-mono text-[10px] font-bold uppercase text-amber-800">2. AGENTIC AI &amp; LLM ACCELERATION</p>
+                            <p class="text-slate-800 mt-1">${data.aiSynthesis}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <p class="font-mono text-[11px] font-bold uppercase text-cobalt">3. SAP ACTIVATE DELIVERABLES</p>
+                        <ul class="space-y-2.5 text-sm text-slate-700">
+                            ${data.deliverables.map(item => `
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-telemetry shrink-0 mt-0.5"></i>
+                                    <span>${item}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 font-mono text-[11px] text-slate-500">
+                        Methodology: SAP Activate Agile + Enterprise Architect Governance
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function selectAiScenario(scenario) {
+            document.querySelectorAll('.ai-scenario-tab').forEach(tab => {
+                tab.classList.remove('border-2', 'border-cobalt', 'bg-blue-50/50');
+                tab.classList.add('border', 'border-slate-200', 'bg-slate-50/70');
+            });
+            const activeTab = document.getElementById(`ai-tab-${scenario}`);
+            if (activeTab) {
+                activeTab.classList.remove('border', 'border-slate-200', 'bg-slate-50/70');
+                activeTab.classList.add('border-2', 'border-cobalt', 'bg-blue-50/50');
+            }
+
+            document.querySelectorAll('.ai-workbench').forEach(wb => wb.classList.add('hidden'));
+            const activeWb = document.getElementById(`workbench-${scenario}`);
+            if (activeWb) activeWb.classList.remove('hidden');
+        }
+
+        // =========================================================================
+        // 3. INTERACTIVE S/4HANA & AMI ARCHITECTURE NODE DIAGRAM
+        // =========================================================================
+        const archNodesData = [
+            {
+                badge: 'LAYER 01 // FIELD & AMI HEAD-END',
+                title: 'Smart Meters, RTU & AMI Head-End Systems',
+                role: 'Functional Bridge for Field Deployment & Customer Operations',
+                description: 'Orchestrating mass smart-meter rollouts across electric, gas, and water territories—covering meter exchange logistics, RTU telemetry, customer opt-out governance, and automated customer notifications.',
+                responsibilities: [
+                    'Mass meter exchange & field work-order synchronization (LG&E and KU Energy — 1.3M electric & gas customers)',
+                    'Customer opt-out tariff handling, RTU exceptions, and multi-channel communication triggers',
+                    'High-volume endpoint commissioning validated at 20,000-meter scale (Puget Sound Energy)'
+                ],
+                artifacts: ['Field Deployment Process Flows', 'Opt-Out & RTU Exception Matrix', 'AMI Cutover Wave Plan']
+            },
+            {
+                badge: 'LAYER 02 // MDMS & MDUS INTEGRATION',
+                title: 'Meter Data Management (MDMS) & SAP MDUS Layer',
+                role: 'MDMS / MDUS Functional Architect & Integration Lead',
+                description: 'Designing bi-directional enterprise service interfaces between SAP IS-U and utility MDMS/MDUS platforms for interval reads, master data synchronization, remote connect/disconnect, and prepay events.',
+                responsibilities: [
+                    'End-to-end MDUS integration across Oahu, Maui & Hawaii Island (Hawaiian Electric — 460K customers)',
+                    'AMI Prepay integration connecting real-time balance thresholds to remote disconnect/reconnect orders (Tacoma Public Utilities)',
+                    'SOA / IDoc payload validation and VEE (Validation, Estimation, Editing) exception triage'
+                ],
+                artifacts: ['MDUS Interface Specifications', 'Prepay Integration Test Suite', 'SOA / IDoc Monitoring Playbook']
+            },
+            {
+                badge: 'LAYER 03 // SAP S/4HANA PRIVATE CLOUD',
+                title: 'SAP S/4HANA Private Cloud (IS-U Device Management & CR&B)',
+                role: 'SAP IS-U DM SME & Greenfield Transformation Lead',
+                description: 'Core utility ERP architecture spanning IS-U Device Management, Register Groups, Meter Reading Orders, Billing & Invoicing (CR&B), and deregulated market transactions.',
+                responsibilities: [
+                    'Greenfield S/4HANA Private Cloud transformation SME & Offshore Lead (Salt River Project — 1.1M electric customers)',
+                    'Greenfield CR&B implementation & ~7,600 market-transaction test cases (EPCOR — 1M+ residents)',
+                    'Mission-critical production support leadership for 15M+ UK gas & electric accounts (Centrica Beacon Program)'
+                ],
+                artifacts: ['S/4HANA Fit-to-Standard Blueprints', 'IS-U DM Configuration & WRICEF Specs', 'SIT/UAT & Hypercare Governance']
+            },
+            {
+                badge: 'LAYER 04 // SAP BUSINESS AI & AGENTIC WORKFLOWS',
+                title: 'SAP Business AI Platform, Joule Studio & Enterprise LLMs',
+                role: 'SAP Certified Generative AI Developer & Certified AI Coach',
+                description: 'Embedding autonomous AI agents and LLM accelerators into SAP delivery—combining SAP Joule Studio, SAP Business AI Platform, OpenAI API, and Anthropic Claude.',
+                responsibilities: [
+                    'Designing Joule Studio skills and agentic workflows for SAP IS-U exception resolution and functional spec drafting',
+                    'Mentoring and coaching a cohort of 200+ Cognizant associates in Generative AI and Agentic AI enablement',
+                    'Positioning the Autonomous Enterprise using SAP Enterprise Architect and Codex solution frameworks'
+                ],
+                artifacts: ['Custom SAP Joule Agent Skills', 'LLM-Assisted Test & Spec Accelerators', 'Enterprise AI Enablement Curriculum']
+            }
+        ];
+
+        function selectArchNode(index) {
+            document.querySelectorAll('.arch-node').forEach((node, idx) => {
+                if (idx === index) {
+                    node.classList.remove('border', 'border-slate-200');
+                    node.classList.add('border-2', 'border-cobalt', 'bg-blue-50/20');
+                } else {
+                    node.classList.remove('border-2', 'border-cobalt', 'bg-blue-50/20');
+                    node.classList.add('border', 'border-slate-200');
+                }
+            });
+
+            const item = archNodesData[index];
+            document.getElementById('arch-detail-panel').innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-7 space-y-3">
+                        <span class="font-mono text-xs font-bold text-cobalt">${item.badge}</span>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">${item.title}</h3>
+                        <p class="text-xs font-mono font-semibold text-slate-500">${item.role}</p>
+                        <p class="text-sm text-slate-700 leading-relaxed pt-1">${item.description}</p>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-4">
+                        <div>
+                            <p class="font-mono text-[11px] font-bold uppercase text-slate-500 mb-2">HANDS-ON ARCHITECTURAL DELIVERY</p>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc pl-4 marker:text-cobalt">
+                                ${item.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="pt-3 border-t border-slate-200">
+                            <p class="font-mono text-[10px] font-bold uppercase text-slate-400 mb-1.5">KEY ARTIFACTS</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${item.artifacts.map(a => `<span class="px-2.5 py-1 rounded bg-white border border-slate-200 font-mono text-[11px] text-slate-700">${a}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // =========================================================================
+        // 4. ALL 11 CERTIFICATIONS DATA & FILTERING
+        // =========================================================================
+        const certificationsList = [
+            { title: 'SAP Certified - Joule Studio Developer', group: 'ai', badge: 'SAP GLOBAL // AI' },
+            { title: 'SAP Certified - Solution Architect - SAP Business AI Platform', group: 'ai', badge: 'SAP GLOBAL // AI' },
+            { title: 'SAP Certified - S/4HANA Cloud Private Edition Implementation Consultant', group: 'sap', badge: 'SAP GLOBAL // S/4HANA' },
+            { title: 'SAP Certified - Generative AI Developer', group: 'ai', badge: 'SAP GLOBAL // AI' },
+            { title: 'SAP Certified - SAP Enterprise Architect', group: 'sap', badge: 'SAP GLOBAL // ARCHITECTURE' },
+            { title: 'SAP Certified - Project Manager - SAP Activate for Agile Implementation Management', group: 'sap', badge: 'SAP GLOBAL // AGILE PM' },
+            { title: 'SAP Certified Associate - Utilities with SAP ERP 6.0', group: 'sap', badge: 'SAP GLOBAL // UTILITIES' },
+            { title: 'SAP Certified - Positioning the Autonomous Enterprise', group: 'ai', badge: 'SAP GLOBAL // AUTONOMOUS' },
+            { title: 'Codex Technical Practitioner', group: 'ai', badge: 'PRACTITIONER CREDENTIAL' },
+            { title: 'Codex Solutions Practitioner', group: 'ai', badge: 'PRACTITIONER CREDENTIAL' },
+            { title: 'Six Sigma Yellow Belt', group: 'sap', badge: 'LEAN PROCESS EXCELLENCE' }
+        ];
+
+        function filterCerts(filter = 'all') {
+            document.querySelectorAll('.cert-filter').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white');
+                btn.classList.add('text-slate-600');
+            });
+            const active = document.getElementById(`cert-filter-${filter}`);
+            if (active) {
+                active.classList.add('bg-slate-900', 'text-white');
+                active.classList.remove('text-slate-600');
+            }
+
+            const items = filter === 'all' ? certificationsList : certificationsList.filter(c => c.group === filter);
+            document.getElementById('certifications-grid').innerHTML = items.map(cert => `
+                <div class="bg-slate-50 border border-slate-200 hover:border-cobalt/50 rounded-xl p-4 flex items-start gap-3.5 transition-colors">
+                    <div class="w-9 h-9 rounded-lg ${cert.group === 'ai' ? 'bg-amber-50 border-amber-200 text-agentic' : 'bg-blue-50 border-blue-200 text-cobalt'} border flex items-center justify-center shrink-0 mt-0.5">
+                        <i data-lucide="badge-check" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="font-mono text-[10px] font-bold tracking-wider text-slate-400">${cert.badge}</span>
+                        <h3 class="font-bold text-sm text-slate-900 leading-snug mt-0.5">${cert.title}</h3>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // =========================================================================
+        // 5. MODAL, CLIPBOARD & TOAST UTILITIES
+        // =========================================================================
+        function openResumeModal() {
+            const modal = document.getElementById('resume-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnBackdrop(event, id) {
+            if (event.target.id === id) closeModal(id);
+        }
+
+        function copyEmailAddress() {
+            const temp = document.createElement('textarea');
+            temp.value = 'biman7777@gmail.com';
+            temp.style.position = 'fixed';
+            temp.style.opacity = '0';
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand('copy');
+                showToast('Copied email: biman7777@gmail.com');
+            } catch (e) {
+                showToast('Email: biman7777@gmail.com');
+            }
+            document.body.removeChild(temp);
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const banner = document.getElementById('toast-banner');
+            document.getElementById('toast-msg').textContent = msg;
+            banner.classList.remove('hidden');
+            banner.classList.add('flex');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                banner.classList.add('hidden');
+                banner.classList.remove('flex');
+            }, 3000);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal('resume-modal');
+        });
+
+        // Initialize All Interactive Modules on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderExplorer();
+            renderTriageInitial();
+            generateIsUTestCases(false);
+            selectBlueprintModule('dm');
+            selectArchNode(0);
+            filterCerts('all');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
