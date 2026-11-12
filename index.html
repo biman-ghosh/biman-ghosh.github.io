@@ -92,48 +92,77 @@
 
     <!-- 1. TOP ARCHITECTURAL NAVIGATION -->
     <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3 xl:gap-6">
             <!-- Left Monogram & Identity -->
-            <div class="flex items-center gap-3 min-w-0">
-                <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+            <div class="flex items-center gap-3 shrink-0">
+                <a href="#" class="flex items-center gap-2.5 shrink-0 group whitespace-nowrap">
                     <span class="w-8 h-8 rounded-lg bg-slate-900 text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-cobalt transition-colors">
                         BG
                     </span>
-                    <span class="font-bold tracking-tight text-slate-900 text-sm sm:text-base">
+                    <span class="font-bold tracking-tight text-slate-900 text-sm sm:text-base whitespace-nowrap">
                         BIMAN GHOSH
                     </span>
                 </a>
-                <span class="hidden xl:inline-block text-slate-300">|</span>
-                <span class="hidden xl:inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 truncate">
+                <span class="hidden xl:inline-block text-slate-300 shrink-0">|</span>
+                <span class="hidden xl:inline-flex items-center gap-1.5 text-[11px] 2xl:text-xs font-mono text-slate-500 whitespace-nowrap shrink-0">
                     <span>Kolkata, India</span>
                     <span class="text-slate-300">&bull;</span>
-                    <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                        Open to Senior Manager / Functional Architect Leadership
+                    <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium px-2 py-0.5 rounded-full bg-emerald-50/90 border border-emerald-200/70">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                        <span>Open to Senior Manager / Functional Architect Roles</span>
                     </span>
                 </span>
             </div>
 
             <!-- Center Navigation -->
-            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600">
-                <a href="#explorer" class="hover:text-cobalt transition-colors">Global Explorer</a>
-                <a href="#ai-playground" class="hover:text-cobalt transition-colors">AI Sandbox</a>
-                <a href="#architecture" class="hover:text-cobalt transition-colors">S/4HANA Stack</a>
-                <a href="#credentials" class="hover:text-cobalt transition-colors">Credentials</a>
+            <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-600 shrink-0">
+                <a href="#explorer" class="group relative px-3 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                    <span>Global Explorer</span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                </a>
+                <a href="#ai-playground" class="group relative px-3 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                    <span>AI Sandbox</span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                </a>
+                <a href="#architecture" class="group relative px-3 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                    <span>S/4HANA Stack</span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                </a>
+                <a href="#credentials" class="group relative px-3 py-2 rounded-lg whitespace-nowrap inline-flex items-center justify-center text-slate-600 hover:text-cobalt hover:bg-slate-100/80 transition-all duration-200 ease-out">
+                    <span>Credentials</span>
+                    <span class="pointer-events-none absolute bottom-1 left-3 right-3 h-0.5 bg-cobalt rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-center"></span>
+                </a>
             </nav>
 
             <!-- Right Quick Actions -->
-            <div class="flex items-center gap-2">
-                <button onclick="openResumeModal()" class="px-3.5 py-2 rounded-lg bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 text-xs font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer shadow-xs">
-                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-cobalt"></i>
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openResumeModal()" class="h-9 px-3.5 rounded-lg bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-800 border border-slate-300 text-xs font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap shrink-0">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-cobalt shrink-0"></i>
                     <span class="hidden sm:inline">Printable CV</span>
                     <span class="sm:hidden">CV</span>
                 </button>
-                <a href="#ai-playground" class="px-3.5 py-2 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold transition-all inline-flex items-center gap-1.5 shadow-xs">
-                    <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                <a href="#ai-playground" class="h-9 px-3.5 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-xs whitespace-nowrap shrink-0">
+                    <i data-lucide="terminal" class="w-3.5 h-3.5 shrink-0"></i>
                     <span>Launch Sandbox</span>
                 </a>
             </div>
+        </div>
+        <!-- Compact Status Strip for Tablet / Smaller Viewports (< 1280px) -->
+        <div class="xl:hidden border-t border-slate-200/70 bg-slate-50/90 px-4 sm:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-600">
+            <div class="flex items-center gap-1.5 min-w-0">
+                <span class="font-medium text-slate-700 whitespace-nowrap">Kolkata, India</span>
+                <span class="text-slate-300">&bull;</span>
+                <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0"></span>
+                    <span>Open to Senior Manager / Functional Architect Roles</span>
+                </span>
+            </div>
+            <nav class="flex lg:hidden items-center gap-1 text-[11px] font-sans font-semibold uppercase tracking-wider text-slate-600 overflow-x-auto no-scrollbar">
+                <a href="#explorer" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">Global Explorer</a>
+                <a href="#ai-playground" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">AI Sandbox</a>
+                <a href="#architecture" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">S/4HANA Stack</a>
+                <a href="#credentials" class="px-2 py-1 rounded-md hover:text-cobalt hover:bg-slate-200/60 whitespace-nowrap transition-colors">Credentials</a>
+            </nav>
         </div>
     </header>
 
@@ -778,104 +807,41 @@
         </div>
     </footer>
 
-    <!-- PRINTABLE RESUME MODAL -->
-    <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/75 backdrop-blur-xs p-4" onclick="closeModalOnBackdrop(event, 'resume-modal')">
-        <div class="bg-white border border-slate-200 rounded-2xl max-w-4xl w-full shadow-2xl flex flex-col max-h-[92vh]">
+    <!-- PRINTABLE RESUME MODAL (EMBEDDED ORIGINAL PDF) -->
+    <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/75 backdrop-blur-xs p-3 sm:p-5" onclick="closeModalOnBackdrop(event, 'resume-modal')">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-5xl w-full shadow-2xl flex flex-col h-[92vh] overflow-hidden">
             <!-- Modal Header -->
-            <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between gap-4 shrink-0 bg-slate-50 rounded-t-2xl">
-                <div class="flex items-center gap-2.5">
-                    <i data-lucide="file-text" class="w-5 h-5 text-cobalt"></i>
-                    <span class="font-bold text-slate-900 text-sm sm:text-base">Curriculum Vitae — Biman Ghosh</span>
+            <div class="px-4 sm:px-6 py-3.5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 shrink-0 bg-slate-50">
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <i data-lucide="file-text" class="w-5 h-5 text-cobalt shrink-0"></i>
+                    <div class="truncate">
+                        <span class="font-bold text-slate-900 text-sm sm:text-base">Curriculum Vitae — Biman Ghosh</span>
+                        <span class="hidden md:inline-block ml-2 font-mono text-[11px] text-slate-500">Biman_Ghosh_Resume_2026.pdf</span>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <button onclick="window.print()" class="px-4 py-2 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer">
-                        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-                        <span>Print / Save PDF</span>
-                    </button>
-                    <button onclick="closeModal('resume-modal')" class="p-2 rounded-lg bg-white border border-slate-300 text-slate-600 hover:text-slate-900 cursor-pointer">
+                <div class="flex items-center gap-2 shrink-0">
+                    <a href="./assets/Biman_Ghosh_Resume_2026.pdf" target="_blank" rel="noopener noreferrer" class="h-9 px-3.5 rounded-lg bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 text-xs font-semibold inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shadow-xs">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5 text-cobalt"></i>
+                        <span>Open in New Tab</span>
+                    </a>
+                    <a href="./assets/Biman_Ghosh_Resume_2026.pdf" download="Biman_Ghosh_Resume_2026.pdf" class="h-9 px-4 rounded-lg bg-cobalt hover:bg-blue-800 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shadow-xs">
+                        <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                        <span>Download PDF</span>
+                    </a>
+                    <button onclick="closeModal('resume-modal')" class="h-9 w-9 rounded-lg bg-white border border-slate-300 text-slate-600 hover:text-slate-900 hover:bg-slate-100 inline-flex items-center justify-center cursor-pointer transition-colors" aria-label="Close modal">
                         <i data-lucide="x" class="w-4 h-4"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Printable CV Body -->
-            <div class="p-6 sm:p-10 overflow-y-auto bg-slate-100">
-                <div id="printable-resume-area" class="bg-white text-slate-900 border border-slate-200 rounded-xl p-8 sm:p-10 max-w-3xl mx-auto shadow-sm space-y-5 font-sans">
-                    <div class="border-b-2 border-slate-900 pb-4">
-                        <h1 class="text-2xl font-extrabold tracking-tight text-slate-950">BIMAN GHOSH</h1>
-                        <p class="text-sm font-bold text-cobalt mt-0.5">SAP Functional Architect | IS-U Device Management &amp; AMI SME | S/4HANA | Agentic AI in SAP</p>
-                        <p class="text-xs text-slate-600 mt-1">Kolkata, West Bengal, India &bull; +91-9940422506 &bull; biman7777@gmail.com &bull; linkedin.com/in/bimanghsh</p>
-                    </div>
-
-                    <div>
-                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Summary</h2>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            SAP Functional Architect with 13 years and 8 full-lifecycle implementations delivering SAP IS-U Device Management and Advanced Metering Infrastructure (AMI) transformations for electric, gas, and water utilities across the US, Canada, the Caribbean, and the UK collectively serving well over 6 million utility customers. Led blueprint and realization workstreams as the critical functional bridge between business stakeholders and technical teams on AMI rollouts, greenfield CR&amp;B implementations, and large-scale production support programs. Currently leading a greenfield S/4HANA Private Cloud transformation. SAP Certified Generative AI Developer applying GenAI to modernize SAP delivery.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Core Competencies</h2>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            SAP IS-U Device Management &bull; SAP AMI / Smart Metering &bull; S/4HANA Cloud Private Edition &bull; MDMS/MDUS Integration &bull; Blueprinting &amp; Realization &bull; SIT/UAT Test Leadership &bull; Cutover &amp; Hypercare &bull; GenAI for SAP (OpenAI API, Anthropic Claude) &bull; Offshore Team Leadership &bull; SAP Joule Studio &bull; Lean Six Sigma
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Certifications</h2>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            SAP Certified - Joule Studio Developer &bull; SAP Certified - Solution Architect - SAP Business AI Platform &bull; SAP Certified - S/4HANA Cloud Private Edition Implementation Consultant &bull; SAP Certified - Generative AI Developer &bull; SAP Certified - SAP Enterprise Architect &bull; SAP Certified - Project Manager - SAP Activate for Agile Implementation Management &bull; SAP Certified Associate - Utilities with SAP ERP 6.0 &bull; SAP Certified - Positioning the Autonomous Enterprise &bull; Codex Technical Practitioner &bull; Codex Solutions Practitioner &bull; Six Sigma Yellow Belt
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Experience</h2>
-                        <div class="space-y-3 text-xs text-slate-700">
-                            <div>
-                                <div class="flex justify-between font-bold text-slate-900">
-                                    <span>Cognizant — Functional Architect (Consulting Manager)</span>
-                                    <span>Dec 2022 – Present | Kolkata, India</span>
-                                </div>
-                                <ul class="list-disc pl-4 mt-1 space-y-1">
-                                    <li>Serve as Utilities SME for SAP IS-U Device Management and AMI across multiple client engagements.</li>
-                                    <li>Cognizant Certified AI Coach — Managing a cohort of 200 associates (GenAI and Agentic AI coaching and enablement).</li>
-                                    <li><strong>Salt River Project (SRP), Arizona, USA — S/4HANA Private Cloud Transformation | 1.1M electric customers:</strong> SAP AMI/IS-U DM SME &amp; Offshore Lead on a greenfield S/4HANA Private Cloud transformation.</li>
-                                    <li><strong>LG&amp;E and KU Energy, Kentucky, USA — AMI Mass Deployment | ~1.3M electric &amp; gas customers across KY and VA:</strong> Lead AMI Mass Deployment, directing offshore delivery across meter exchange, RTU, opt-out, and customer communication workstreams.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <div class="flex justify-between font-bold text-slate-900">
-                                    <span>Utegration, a Cognizant Co. — Lead Consultant, IS-U DM/AMI</span>
-                                    <span>Apr 2017 – Dec 2022 | Bengaluru, India</span>
-                                </div>
-                                <ul class="list-disc pl-4 mt-1 space-y-1">
-                                    <li>Delivered 6 end-to-end AMI/CR&amp;B implementations: <strong>Hawaiian Electric (HECO)</strong> (~460K electric customers across Oahu, Maui &amp; Hawaii Island), <strong>Puget Sound Energy (PSE)</strong> (3 releases, ~1.2M electric / ~900K gas customers), <strong>EPCOR</strong> (Greenfield CR&amp;B, 1M+ water &amp; electricity residents), <strong>Tacoma Public Utilities</strong> (AMI Prepay Integration, 180K electric customers), <strong>Aqualectra Curaçao</strong> (AMI Blueprint &amp; Realization, ~80K households), and <strong>Nebraska Public Power District (NPPD)</strong> (AMI System Integration, ~1M residents).</li>
-                                    <li>Led offshore testing teams of up to 7 through blueprint, SIT, and UAT; built test case libraries and managed defect resolution across gas and electric AMI programs.</li>
-                                    <li>Directed ~7,600 unique market-transaction test cases for EPCOR and performance-tested AMI meter creation at 20,000-meter scale for PSE, achieving zero post-go-live defects on owned objects.</li>
-                                    <li>Managed AMI Prepay integration testing and cutover/hypercare support across projects in the US and Caribbean.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <div class="flex justify-between font-bold text-slate-900">
-                                    <span>Cognizant Technology Solutions — SAP IS-U DM Lead / Consultant</span>
-                                    <span>Jan 2014 – Apr 2017 | Chennai, India</span>
-                                </div>
-                                <ul class="list-disc pl-4 mt-1 space-y-1">
-                                    <li><strong>Centrica (British Gas), United Kingdom — Production Support | 15M+ UK residential gas &amp; electric accounts:</strong> Led a 6-member offshore team delivering production support and service improvements for Centrica's Beacon program.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-1">Education</h2>
-                        <p class="text-xs text-slate-700">
-                            <strong>Master of Computer Application (MCA)</strong> &amp; <strong>Bachelor of Computer Application (BCA)</strong> — West Bengal University of Technology, Kolkata
-                        </p>
-                    </div>
-                </div>
+            <!-- Embedded PDF Viewer Body -->
+            <div class="flex-1 w-full bg-slate-800 relative overflow-hidden">
+                <iframe
+                    src="./assets/Biman_Ghosh_Resume_2026.pdf#view=FitH"
+                    title="Biman Ghosh — Curriculum Vitae (PDF)"
+                    class="w-full h-full border-0"
+                >
+                </iframe>
             </div>
         </div>
     </div>
